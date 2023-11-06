@@ -22,7 +22,7 @@ class AddRecordForm(forms.ModelForm):
 
     class Meta:
         model = Record
-        fields = ["powod", "dotyczy", "data_pozew", "wyrok1", "wyrok2", "egzekucja", "uwagi", "zakonczenie", "status"]
+        fields = ["powod", "dotyczy", "data_pozew", "wyrok1", "wyrok2", "egzekucja", "uwagi", "zakonczenie", "status", "kto"]
 
 
 
@@ -30,7 +30,7 @@ class UpdateRecordForm(forms.ModelForm):
 
     class Meta:
         model = Record
-        fields = ["powod", "dotyczy", "data_pozew", "wyrok1", "wyrok2", "egzekucja", "uwagi", "zakonczenie", "status"]
+        fields = ["powod", "dotyczy", "data_pozew", "wyrok1", "wyrok2", "egzekucja", "uwagi", "zakonczenie", "status", "kto"]
 
 
 

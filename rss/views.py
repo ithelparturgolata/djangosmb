@@ -64,9 +64,31 @@ def dashboard(request):
     p = Paginator(Record.objects.all(), 10)
     page = request.GET.get("page")
     my_record = p.get_page(page)
-    # context = {"records": my_records, "my_record": my_record}
 
     return render(request, "rss/dashboard.html", {"records": my_records, "my_record": my_record})
+
+
+
+@login_required(login_url = "login")
+def dashboard_przeciw(request):
+    my_records = Record.objects.all()
+    p = Paginator(Record.objects.all(), 10)
+    page = request.GET.get("page")
+    my_record = p.get_page(page)
+
+    return render(request, "rss/dashboard-przeciw.html", {"records": my_records, "my_record": my_record})
+
+
+
+@login_required(login_url = "login")
+def dashboard_przez(request):
+    my_records = Record.objects.all()
+    p = Paginator(Record.objects.all(), 10)
+    page = request.GET.get("page")
+    my_record = p.get_page(page)
+
+    return render(request, "rss/dashboard-przez.html", {"records": my_records, "my_record": my_record})
+
 
 
 

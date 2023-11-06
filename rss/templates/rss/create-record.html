@@ -27,6 +27,8 @@
                 <br>
                 {{form.status|as_crispy_field}}
                 <br>
+                {{form.kto|as_crispy_field}}
+                <br>
                 <button type="submit" class="btn btn-outline-primary">Dodaj</button>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="{% url 'dashboard' %}" class="btn btn-secondary">Powrót</a>
@@ -35,6 +37,136 @@
         <br>
     </body>
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+{#{% extends 'rss/base.html' %}#}
+{#{% load crispy_forms_tags %}#}
+{##}
+{#{% block content %}#}
+{#    <body>#}
+{#        <div class="container bg-light shadow-md p-5 form-layout-add">#}
+{#            <h3> Dodaj pozew </h3>#}
+{#            <hr>#}
+{#            <br>#}
+{#            <form method="POST" autocomplete="off">#}
+{#                {% csrf_token %}#}
+{##}
+{##}
+{#                <div class="mb-3">#}
+{#                    <label for="powod" class="form-label">Powód</label><br>#}
+{#                    <textarea maxlength="1000" name="powod" required autocomplete="off" id="powod">#}
+{##}
+{#                    </textarea>#}
+{#                </div>#}
+{#                <div class="mb-3">#}
+{#                    <label for="dotyczy" class="form-label">Dotyczy</label>#}
+{#                    <textarea maxlength="1000" name="dotyczy" cols="5" required autocomplete="off" id="powod">#}
+{#                    </textarea>#}
+{#                </div>#}
+{#                <div class="mb-3">#}
+{#                    <label for="data_pozew" class="form-label">Data pozwu</label>#}
+{#                    <input name="data_pozew" type="date" required>#}
+{##}
+{#                </div>#}
+{#                <div class="mb-3">#}
+{#                    <label for="wyrok1" class="form-label">Dotyczy</label>#}
+{#                    <textarea maxlength="1000" name="wyrok1" cols="5" required autocomplete="off" id="powod">#}
+{#                    </textarea>#}
+{#                </div>#}
+{#                <div class="mb-3">#}
+{#                    <label for="wyrok2" class="form-label">Dotyczy</label>#}
+{#                    <textarea maxlength="1000" name="wyrok2" cols="5" required autocomplete="off" id="powod">#}
+{#                    </textarea>#}
+{#                </div>#}
+{#                <div class="mb-3">#}
+{#                    <label for="egzekucja" class="form-label">Dotyczy</label>#}
+{#                    <textarea maxlength="1000" name="egzekucja" cols="5" required autocomplete="off" id="powod">#}
+{#                    </textarea>#}
+{#                </div>#}
+{#                <div class="mb-3">#}
+{#                    <label for="uwagi" class="form-label">Dotyczy</label>#}
+{#                    <textarea maxlength="1000" name="uwagi" cols="5" required autocomplete="off" id="powod">#}
+{#                    </textarea>#}
+{#                </div>#}
+{#                <div class="mb-3">#}
+{#                    <label for="zakonczenie" class="form-label">Dotyczy</label>#}
+{#                    <textarea maxlength="1000" name="zakonczenie" cols="5" required autocomplete="off" id="powod">#}
+{#                    </textarea>#}
+{#                </div>#}
+{#                <div class="form-group">#}
+{#                                            <label>Faza: </label>#}
+{##}
+{#                                            <select class="form-control" onchange="myForm.submit()" name="status">#}
+{#                                                <option value="WYBIERZ">------</option>#}
+{#                                                <option value="W trakcie realizacji" type="text"#}
+{#                                                        class="form-control" name="status" id="status">W trakcie#}
+{#                                                    realizacji#}
+{#                                                </option>#}
+{#                                                <option value="Zrealizowano" type="text" class="form-control"#}
+{#                                                        name="status" id="status">Zrealizowano#}
+{#                                                </option>#}
+{#                                            </select>#}
+{#                                        </div>#}
+{##}
+{#                <button type="submit" class="btn btn-outline-primary">Dodaj</button>#}
+{#                &nbsp;&nbsp;&nbsp;&nbsp;#}
+{#                <a href="{% url 'dashboard' %}" class="btn btn-secondary">Powrót</a>#}
+{#            </form>#}
+{#        </div>#}
+{#        <br>#}
+{#    </body>#}
+{#{% endblock %}#}
+
+
+
+{##}
+{#{% extends 'rss/base.html' %}#}
+{#{% load crispy_forms_tags %}#}
+{##}
+{#{% block content %}#}
+{#    <body>#}
+{#        <div class="container bg-light shadow-md p-5 form-layout-add">#}
+{#            <h3> Dodaj pozew </h3>#}
+{#            <hr>#}
+{#            <br>#}
+{#            <form method="POST" autocomplete="off">#}
+{#                {% csrf_token %}#}
+{#                {{form.powod|as_crispy_field}}#}
+{#                <br>#}
+{#                {{form.dotyczy|as_crispy_field}}#}
+{#                <br>#}
+{#                {{form.data_pozew|as_crispy_field}}#}
+{#                <br>#}
+{#                {{form.wyrok1|as_crispy_field}}#}
+{#                <br>#}
+{#                {{form.wyrok2|as_crispy_field}}#}
+{#                <br>#}
+{#                {{form.egzekucja|as_crispy_field}}#}
+{#                <br>#}
+{#                {{form.uwagi|as_crispy_field}}#}
+{#                <br>#}
+{#                {{form.zakonczenie|as_crispy_field}}#}
+{#                <br>#}
+{#                {{form.status|as_crispy_field}}#}
+{#                <br>#}
+{#                <button type="submit" class="btn btn-outline-primary">Dodaj</button>#}
+{#                &nbsp;&nbsp;&nbsp;&nbsp;#}
+{#                <a href="{% url 'dashboard' %}" class="btn btn-secondary">Powrót</a>#}
+{#            </form>#}
+{#        </div>#}
+{#        <br>#}
+{#    </body>#}
+{#{% endblock %}#}
+
 
 
 

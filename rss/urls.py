@@ -9,6 +9,8 @@ urlpatterns = [
     path("logout", views.logout_view, name = "logout"),
     #CRUD views
     path("dashboard", views.dashboard, name = "dashboard"),
+    path("dashboard_przeciw", views.dashboard_przeciw, name = "dashboard-przeciw"),
+    path("dashboard_przez", views.dashboard_przez, name = "dashboard-przez"),
     path("create", views.create_record, name = "create"),
     path("update/<int:pk>", views.update_record, name = "update"),
     path("view/<int:pk>", views.view_record, name = "view"),

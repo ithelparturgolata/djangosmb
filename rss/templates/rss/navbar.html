@@ -17,46 +17,46 @@
             &nbsp; &nbsp; &nbsp;
             {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'dashboard' %}">Dashboard &nbsp; <i class="fa fa-home"
+                    <a class="btn btn-outline-success" href="{% url 'dashboard' %}">Dashboard &nbsp; <i class="fa fa-home"
                                                                                          aria-hidden="true"></i> </a>
-                </li>
+                </li>&nbsp;&nbsp;&nbsp;
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'pdf' %}">Przeciwko &nbsp; <i class="fa fa-file-o"
+                    <a class="btn btn-outline-success" href="{% url 'dashboard-przeciw' %}">Przeciwko &nbsp; <i class="fa fa-file-o"
                                                                                         aria-hidden="true"></i> </a>
-                </li>
+                </li>&nbsp;&nbsp;&nbsp;
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'pdf' %}">Przez &nbsp; <i class="fa fa-file-o"
+                    <a class="btn btn-outline-success" href="{% url 'dashboard-przez' %}">Przez &nbsp; <i class="fa fa-file-o"
                                                                                         aria-hidden="true"></i> </a>
-                </li>
+                </li>&nbsp;&nbsp;&nbsp;
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'pdf' %}">Raport &nbsp; <i class="fa fa-file-pdf-o"
+                    <a class="btn btn-outline-success" href="{% url 'pdf' %}">Raport &nbsp; <i class="fa fa-file-pdf-o"
                                                                                         aria-hidden="true"></i> </a>
-                </li>
+                </li>&nbsp;&nbsp;&nbsp;
                 &nbsp;     &nbsp;     &nbsp;
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Wyloguj się &nbsp; <i class="fa fa-sign-out"
+                    <a class="btn btn-outline-success" href="{% url 'logout' %}">Wyloguj się &nbsp; <i class="fa fa-sign-out"
                                                                                         aria-hidden="true"></i> </a>
-                </li>
+                </li>&nbsp;&nbsp;&nbsp;
 
 
                 </ul>
             {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'register' %}"> Utwórz konto </a>
+                    <a class="btn btn-outline-success" href="{% url 'register' %}"> Utwórz konto </a>
                 </li>
                 &nbsp;     &nbsp;     &nbsp;&nbsp;&nbsp;
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Zaloguj się</a>
+                    <a class="btn btn-outline-success" href="{% url 'login' %}">Zaloguj się</a>
                 </li>
             {% endif %}
 
 <form class="d-flex" role="search" method="POST" action="{% url "search" %}">
     {% csrf_token %}
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="..." aria-label="Search" name="searched">
+        <button class="btn btn-outline-success" type="submit">Szukaj</button>
       </form>
 
     </div>
