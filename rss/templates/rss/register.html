@@ -1,0 +1,26 @@
+{% extends "rss/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <body>
+    <div class="container bg-light shadow-md p-5 form-layout">
+        <h3>Panel rejestracji</h3>
+        <hr>
+        <br>
+        <form method="post" autocomplete="off">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <br>
+            <button type="submit" class="btn btn-primary w-100 btn-block p-2">Utwórz konto</button>
+        </form>
+        <br>
+        <div class="text-center">
+            <p>Masz już konto?</p>
+            <a href="{% url "login" %}">Zaloguj się</a>
+        </div>
+
+    </div>
+    <br>
+    </body>
+{% endblock %}
