@@ -1,16 +1,19 @@
-from django.test import TestCase, Client
-from rss.models import Record
-import json
+from django.test import SimpleTestCase
+from django.urls import resolve, reverse
+from rss.views import dashboard, dashboard_przeciw, dashboard_przez
 
+class TestUrls(SimpleTestCase):
+    def test_dasboard_url_is_resolved(self):
+        url = reverse("dashboard")
+        print(resolve(url))
+        self.assertEqual(resolve(url).func, dashboard)
 
-class BasicTest(TestCase):
-    def test_entry(self):
-        name=Record()
-        name.powod="Test z unittestu"
-        name.dotyczy = "Firma z unitestu"
-        name.data_pozew = "2023-11-06"
-        name.save()
+    def test_dasboard_przeciw_url_is_resolved(self):
+        url = reverse("dashboard-przeciw")
+        print(resolve(url))
+        self.assertEqual(resolve(url).func, dashboard_przeciw)
 
-
-        record=Record.objects.get(pk=name.id)
-        self.assertEqual(record,name)
+    def test_dasboard_przez_url_is_resolved(self):
+        url = reverse("dashboard-przez")
+        print(resolve(url))
+        self.assertEqual(resolve(url).func, dashboard_przez)
