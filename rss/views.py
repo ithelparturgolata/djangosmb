@@ -143,6 +143,8 @@ def delete(request, pk):
 def sms_record(request,  pk):
     record = Record.objects.get(id = pk)
     form = SmsRecordForm(instance = record)
+    my_records = Record.objects.all()
+    context = {}
 
     if request.method == "POST":
         phone = request.POST.get("phone")
@@ -153,10 +155,15 @@ def sms_record(request,  pk):
         for char in to_remov.keys():
             content = content.replace(char, to_remov[char])
         if request.method == "POST":
-            token = "xxxxxx"
+            token = "xxxx"
             client = SmsApiPlClient(access_token=token)
             send_results = client.sms.send(to=phone, message=content, from_="SMBUDOWLANI")
-            return render(request, "rss/dashboard.html")
+            my_records = Record.objects.all()
+            p = Paginator(Record.objects.all(), 10)
+            page = request.GET.get("page")
+            my_record = p.get_page(page)
+
+            return render(request, "rss/dashboard.html", {"records": my_records, "my_record": my_record})
 
     context = {"form": form}
     return render(request, "rss/sms-record.html", context = context)
