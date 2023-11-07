@@ -38,4 +38,4 @@ class SmsRecordForm(forms.ModelForm):
 
     class Meta:
         model = Record
-        fields = ["powod", "dotyczy", "data_pozew", "wyrok1", "wyrok2", "egzekucja", "uwagi", "zakonczenie", "status"]
+        fields = ["powod", "dotyczy", "phone", "content"]

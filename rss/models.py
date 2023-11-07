@@ -23,6 +23,7 @@ class Record(models.Model):
         choices=status_wybor,
         default=zakonczono,
     )
+
     przeciwko = "Przeciwko"
     przez = "Przez"
     kto_wybor = [
@@ -34,5 +35,28 @@ class Record(models.Model):
         choices=kto_wybor,
     )
 
+    asystentka = "500524230"
+    zarzad = "601521658, 601202139"
+    radca = "694704533"
+    it = "601521657"
+    wszyscy = "601521658, 601202139, 500524230, 694704533"
+
+    phone_wybor = [
+        (asystentka, "Asystentka"),
+        (zarzad, "Zarzad"),
+        (radca, "Radca"),
+        (it, "IT"),
+        (wszyscy, "Wszyscy")
+    ]
+    phone = models.CharField(
+        max_length=100,
+        choices=phone_wybor,
+        default=zarzad,
+    )
+
+    content = models.TextField(max_length=160, blank=True)
+
+
     def __str__(self):
         return self.powod + "   " + self.dotyczy
+

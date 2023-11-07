@@ -12,7 +12,6 @@ import io
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter
-from django.db.models import Q
 
 # homepage view
 def home(request):
@@ -27,10 +26,10 @@ def register(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-            # return redirect()
 
     context = {"form": form}
     return render(request, "rss/register.html", context = context)
+
 
 #login view
 def login_view(request):
@@ -68,7 +67,6 @@ def dashboard(request):
     return render(request, "rss/dashboard.html", {"records": my_records, "my_record": my_record})
 
 
-
 @login_required(login_url = "login")
 def dashboard_przeciw(request):
     my_records = Record.objects.all()
@@ -79,7 +77,6 @@ def dashboard_przeciw(request):
     return render(request, "rss/dashboard-przeciw.html", {"records": my_records, "my_record": my_record})
 
 
-
 @login_required(login_url = "login")
 def dashboard_przez(request):
     my_records = Record.objects.all()
@@ -88,8 +85,6 @@ def dashboard_przez(request):
     my_record = p.get_page(page)
 
     return render(request, "rss/dashboard-przez.html", {"records": my_records, "my_record": my_record})
-
-
 
 
 # add pozew
@@ -146,7 +141,29 @@ def delete(request, pk):
 # sms pozew
 @login_required(login_url = "login")
 def sms_record(request,  pk):
-    pass
+    record = Record.objects.get(id = pk)
+    form = SmsRecordForm(instance = record)
+
+    if request.method == "POST":
+        phone = request.POST.get("phone")
+        content = request.POST.get("content")
+        form = SmsRecordForm(request.POST, instance = record)
+        to_remov = {"ą": "a", "Ą": "A", "ś": "s", "Ś": "S", "ę": "e", "Ę": "E", "Ł": "L", "ł": "l", "Ó": "O", "ó": "o",
+                    "Ń": "N", "ń": "n", "ć": "c", "Ć": "C", "Ż": "Z", "Ź": "Z", "ż": "z", "ź": "z", '„': "", '”': ""}
+        for char in to_remov.keys():
+            content = content.replace(char, to_remov[char])
+        if request.method == "POST":
+            token = "xxxxxx"
+            client = SmsApiPlClient(access_token=token)
+            send_results = client.sms.send(to=phone, message=content, from_="SMBUDOWLANI")
+            return render(request, "rss/dashboard.html")
+
+    context = {"form": form}
+    return render(request, "rss/sms-record.html", context = context)
+
+
+
+
 
 
 
