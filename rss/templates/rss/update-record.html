@@ -27,7 +27,9 @@
                 <br>
                 {{form.status|as_crispy_field}}
                 <br>
-            <button type="submit" class="btn btn-outline-primary">Edytuj</button>
+                {{form.kto|as_crispy_field}}
+                <br>
+            <button type="submit" class="btn btn-outline-primary">Zapisz</button>
             &nbsp;&nbsp;&nbsp;
                 <a href="{% url 'dashboard' %}" class="btn btn-secondary">Powrót</a>
             </form>

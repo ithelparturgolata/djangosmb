@@ -53,7 +53,6 @@ class Record(models.Model):
         choices=phone_wybor,
         default=zarzad,
     )
-
     content = models.TextField(max_length=160, blank=True)
 
 
