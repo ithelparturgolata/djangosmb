@@ -98,25 +98,25 @@ def create_record(request):
             form.save()
 
             return redirect("dashboard")
-    context = {'form': form}
-    return render(request, 'rss/create-record.html', context=context)
+    context = {"form": form}
+    return render(request, "rss/create-record.html", context = context)
 
 
 # update pozew
-@login_required(login_url='login')
+@login_required(login_url = "login")
 def update_record(request, pk):
-    record = Record.objects.get(id=pk)
-    form = UpdateRecordForm(instance=record)
+    record = Record.objects.get(id = pk)
+    form = UpdateRecordForm(instance = record)
 
     if request.method == 'POST':
-        form = UpdateRecordForm(request.POST, instance=record)
+        form = UpdateRecordForm(request.POST, instance = record)
 
         if form.is_valid():
             form.save()
             return redirect("dashboard")
 
-    context = {'form': form}
-    return render(request, 'rss/update-record.html', context=context)
+    context = {"form": form}
+    return render(request, "rss/update-record.html", context = context)
 
 
 
@@ -130,9 +130,9 @@ def view_record(request,  pk):
 
 
 # delete pozew
-@login_required(login_url='my-login')
+@login_required(login_url = "login")
 def delete(request, pk):
-    record = Record.objects.get(id=pk)
+    record = Record.objects.get(id = pk)
     record.delete()
 
     return redirect("dashboard")
@@ -156,8 +156,8 @@ def sms_record(request,  pk):
             content = content.replace(char, to_remov[char])
         if request.method == "POST":
             token = "rM5DsJlOvDkbGnYnHAn9f9GmpphT0ovOywqPaiLL"
-            client = SmsApiPlClient(access_token=token)
-            send_results = client.sms.send(to=phone, message=content, from_="SMBUDOWLANI")
+            client = SmsApiPlClient(access_token = token)
+            send_results = client.sms.send(to = phone, message = content, from_ = "SMBUDOWLANI")
             my_records = Record.objects.all()
             p = Paginator(Record.objects.all(), 10)
             page = request.GET.get("page")
@@ -170,29 +170,19 @@ def sms_record(request,  pk):
 
 
 
-
-
-
-
 # pdf pozew
 def pdf(request):
     buf = io.BytesIO()
-    c = canvas.Canvas(buf, pagesize=letter, bottomup=0)
+    c = canvas.Canvas(buf, pagesize = letter, bottomup = 0)
     textob = c.beginText()
     textob.setTextOrigin(inch, inch)
     textob.setFont("Helvetica", 14)
-    # lines = [
-    #     "To jest linia 1",
-    #     "To jest linia 2",
-    #     "To jest linia 3",
-    # ]
     records = Record.objects.all()
     lines = []
 
     for record in records:
         lines.append(record.powod)
         lines.append(record.dotyczy)
-        # lines.append(record.data_pozew)
         lines.append(record.wyrok1)
         lines.append(record.wyrok2)
         lines.append(record.egzekucja)
@@ -209,14 +199,14 @@ def pdf(request):
     c.save()
     buf.seek(0)
 
-    return FileResponse(buf, as_attachment=True, filename="raport.pdf")
+    return FileResponse(buf, as_attachment = True, filename = "raport.pdf")
 
 
 #search pozew
 def search(request):
     if request.method == "POST":
         searched = request.POST["searched"]
-        my_records = Record.objects.filter(powod__contains=searched)
+        my_records = Record.objects.filter(powod__contains = searched)
 
         return render(request, "rss/dashboard-search.html", {"searched": searched, "my_records": my_records})
     else:
