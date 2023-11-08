@@ -22,8 +22,8 @@
         </thead>
         <tbody>
 
-            {% for record in records %}
-                {% if record.kto == "Przez" %}
+        {% for record in records %}
+            {% if record.kto == "Przez" %}
                 <tr>
                     <td> {{ record.id }} </td>
                     <td> {{ record.powod }}</td>
@@ -33,9 +33,9 @@
                             class="fa fa-eye" aria-hidden="true"></i> </a></td>
                     {#                <td> <a class="btn btn-outline-primary btn-sm" href="{% url ''  %}"> <i class="fa fa-comment" aria-hidden="true"></i> </a> </td>#}
                 </tr>
-                      {% endif %}
+            {% endif %}
 
-            {% endfor %}
+        {% endfor %}
 
         </tbody>
     </table>

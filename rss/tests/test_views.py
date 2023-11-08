@@ -1,6 +1,7 @@
 from django.test import SimpleTestCase
 from django.urls import resolve, reverse
-from rss.views import dashboard, dashboard_przeciw, dashboard_przez, create_record, pdf, search
+from rss.views import dashboard, dashboard_przeciw, dashboard_przez, create_record, pdf, search, login_view, logout_view, \
+    register, update_record, view_record, delete
 
 
 # testy urls
@@ -34,3 +35,19 @@ class TestUrls(SimpleTestCase):
         url = reverse("search")
         print(resolve(url))
         self.assertEqual(resolve(url).func, search)
+
+    def test_login_przez_url_is_resolved(self):
+        url = reverse("login")
+        print(resolve(url))
+        self.assertEqual(resolve(url).func, login_view)
+
+    def test_logout_przez_url_is_resolved(self):
+        url = reverse("logout")
+        print(resolve(url))
+        self.assertEqual(resolve(url).func, logout_view)
+
+    def test_register_przez_url_is_resolved(self):
+        url = reverse("register")
+        print(resolve(url))
+        self.assertEqual(resolve(url).func, register)
+

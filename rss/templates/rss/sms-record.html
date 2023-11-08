@@ -3,22 +3,22 @@
 
 {% block content %}
     <body>
-        <div class="container bg-light shadow-md p-5 form-layout-add">
-            <h3> Wyślij sms </h3>
-            <hr>
+    <div class="container bg-light shadow-md p-5 form-layout-add">
+        <h3> Wyślij sms </h3>
+        <hr>
+        <br>
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{ form.content|as_crispy_field }}
             <br>
-            <form method="POST" autocomplete="off">
-                {% csrf_token %}
-                {{form.content|as_crispy_field}}
-                <br>
-                {{form.phone|as_crispy_field}}
-                <br>
+            {{ form.phone|as_crispy_field }}
+            <br>
             <button type="submit" class="btn btn-outline-primary">Wyślij</button>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="{% url 'dashboard' %}" class="btn btn-secondary">Powrót</a>
-            </form>
-        </div>
-        <br>
+            <a href="{% url 'dashboard' %}" class="btn btn-secondary">Powrót</a>
+        </form>
+    </div>
+    <br>
     </body>
 
 

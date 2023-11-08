@@ -2,6 +2,8 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+{#{% load static %}#}
+{#<script type="text/javascript" src="{% static "ckeditor/ckeditor.js" %}"></script>#}
     <body>
         <div class="container bg-light shadow-md p-5 form-layout-add">
             <h3> Dodaj pozew </h3>
@@ -11,7 +13,7 @@
                 {% csrf_token %}
                 {{form.powod|as_crispy_field}}
                 <br>
-                {{form.dotyczy|as_crispy_field}}
+                {{ form.dotyczy|as_crispy_field}}
                 <br>
                 {{form.data_pozew|as_crispy_field}}
                 <br>
