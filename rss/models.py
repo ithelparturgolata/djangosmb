@@ -3,8 +3,8 @@ from django.db import models
 
 class Record(models.Model):
     data_utworzenia = models.DateTimeField(auto_now_add = True)
-    powod = models.TextField(max_length = 500, blank = False)
-    dotyczy = models.TextField(max_length = 1000, blank= False)
+    powod = models.CharField(max_length = 500, blank = False)
+    dotyczy = models.CharField(max_length = 1000, blank= False)
     data_pozew = models.DateField(blank = True)
     wyrok1 = models.TextField(max_length = 1000, blank = True)
     wyrok2 = models.TextField(max_length = 1000, blank = True)
@@ -23,14 +23,14 @@ class Record(models.Model):
         default = zakonczono,
     )
 
-    przeciwko = "Przeciwko"
-    przez = "Przez"
+    przeciwko = "Pozew przeciwko Spółdzielni"
+    przez = "Pozew przez Spółdzielnię"
     kto_wybor = [
-        (przeciwko, "Przeciwko"),
-        (przez, "Przez")
+        (przeciwko, "Pozew przeciwko Spółdzielni"),
+        (przez, "Pozew przez Spółdzielnię")
     ]
     kto = models.CharField(
-        max_length = 22,
+        max_length = 50,
         choices = kto_wybor,
     )
 
