@@ -12,6 +12,7 @@ import io
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter
+from django.contrib import messages
 
 # homepage view
 def home(request):
@@ -44,6 +45,9 @@ def login_view(request):
             user = authenticate(request, username = username, password = password)
             if user is not None:
                 auth.login(request, user)
+                messages.success(request, "Zalogowano")
+
+
                 return redirect("dashboard")
 
     context = {"form": form}
@@ -53,6 +57,7 @@ def login_view(request):
 # logout view
 def logout_view(request):
     auth.logout(request)
+    messages.success(request, "Wylogowano")
     return redirect("login")
 
 
@@ -96,7 +101,7 @@ def create_record(request):
         form = AddRecordForm(request.POST)
         if form.is_valid():
             form.save()
-
+            messages.success(request, "Dodano pozew")
             return redirect("dashboard")
     context = {"form": form}
     return render(request, "rss/create-record.html", context = context)
@@ -113,6 +118,7 @@ def update_record(request, pk):
 
         if form.is_valid():
             form.save()
+            messages.success(request, "Zaktualizowano pozew")
             return redirect("dashboard")
 
     context = {"form": form}
@@ -134,7 +140,7 @@ def view_record(request,  pk):
 def delete(request, pk):
     record = Record.objects.get(id = pk)
     record.delete()
-
+    messages.success(request, "Skasowano pozew")
     return redirect("dashboard")
 
 
@@ -162,6 +168,7 @@ def sms_record(request,  pk):
             p = Paginator(Record.objects.all(), 10)
             page = request.GET.get("page")
             my_record = p.get_page(page)
+
 
             return render(request, "rss/dashboard.html", {"records": my_records, "my_record": my_record})
 
