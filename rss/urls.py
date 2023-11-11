@@ -18,4 +18,6 @@ urlpatterns = [
     path("sms/<int:pk>", views.sms_record, name = "sms"),
     path("pdf", views.pdf, name = "pdf"),
     path("search", views.search, name = "search"),
+    path("view_file", views.view_file, name = "view_file"),
+    path("upload_file", views.upload_file, name = "upload_file"),
 ]

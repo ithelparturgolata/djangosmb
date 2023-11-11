@@ -178,6 +178,7 @@ def sms_record(request,  pk):
 
 
 # pdf pozew
+@login_required(login_url = "login")
 def pdf(request):
     buf = io.BytesIO()
     c = canvas.Canvas(buf, pagesize = letter, bottomup = 0)
@@ -210,6 +211,7 @@ def pdf(request):
 
 
 #search pozew
+@login_required(login_url = "login")
 def search(request):
     if request.method == "POST":
         searched = request.POST["searched"]
@@ -218,3 +220,15 @@ def search(request):
         return render(request, "rss/dashboard-search.html", {"searched": searched, "my_records": my_records})
     else:
         return render(request, "rss/dashboard-search.html", {})
+
+
+
+@login_required(login_url = "login")
+def view_file(request):
+    pass
+
+
+
+@login_required(login_url = "login")
+def upload_file(request):
+    pass

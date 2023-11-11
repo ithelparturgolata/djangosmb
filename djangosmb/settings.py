@@ -1,14 +1,20 @@
+import os.path
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "xxxxx"
+SECRET_KEY = "django-insecure-v@uyg^v#5+4cr%#)dp8xz^*+m9933%ma_63qh=2be2g=!f9r$k"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -27,6 +33,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rss",
     "crispy_forms",
+    "cloudinary",
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -116,8 +123,17 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / 'static_root'
 
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+cloudinary.config(
+    cloud_name = "dk3rpyxzw",
+    api_key = "925244582635693",
+    api_secret = "LqY5O9qEOs0ZJNcIxP2bon85Wds"
+
+
+)
+
+

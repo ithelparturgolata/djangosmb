@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 
 class Record(models.Model):
@@ -52,8 +53,14 @@ class Record(models.Model):
         choices = phone_wybor,
         default = zarzad,
     )
-    content = models.TextField(max_length=160, blank=True)
-
+    content = models.TextField(max_length = 160, blank = True)
 
     def __str__(self):
         return self.powod + "   " + self.dotyczy
+
+
+class Storage(models.Model):
+    tytul = models.CharField(max_length = 100)
+    file = CloudinaryField("image")
+
+
