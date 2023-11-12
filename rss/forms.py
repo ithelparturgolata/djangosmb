@@ -51,5 +51,6 @@ class SmsRecordForm(forms.ModelForm):
 
 class UploadFileForm(forms.ModelForm):
     class Meta:
+        folder = forms.FileField(localize="uploads/")
         model = Record
         fields = ('opis', 'plik')

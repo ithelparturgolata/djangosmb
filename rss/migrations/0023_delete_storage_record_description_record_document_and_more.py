@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="record",
             name="document",
-            field=models.FileField(blank=True, upload_to="documents/"),
+            field=models.FileField(blank=True, upload_to="uploads/"),
         ),
         migrations.AddField(
             model_name="record",

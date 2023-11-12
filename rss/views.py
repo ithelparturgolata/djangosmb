@@ -164,7 +164,7 @@ def sms_record(request,  pk):
         for char in to_remov.keys():
             content = content.replace(char, to_remov[char])
         if request.method == "POST":
-            token = "rM5DsJlOvDkbGnYnHAn9f9GmpphT0ovOywqPaiLL"
+            token = "xxx"
             client = SmsApiPlClient(access_token = token)
             send_results = client.sms.send(to = phone, message = content, from_ = "SMBUDOWLANI")
             my_records = Record.objects.all()
@@ -238,6 +238,7 @@ def view_file(request, pk):
 #upload pozew pliki
 @login_required(login_url = "login")
 def upload_file(request, pk):
+
     record = Record.objects.get(id = pk)
     form = UploadFileForm(instance = record)
 
@@ -246,7 +247,7 @@ def upload_file(request, pk):
         if form.is_valid():
             form.save()
             messages.success(request, "Dodano plik")
-            return redirect('dashboard')
+            return redirect('view_file', pk)
     else:
         form = UploadFileForm()
     context = {"form": form, "record": record}

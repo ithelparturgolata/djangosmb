@@ -55,7 +55,7 @@ class Record(models.Model):
     )
     content = models.TextField(max_length = 160, blank = True)
     opis = models.CharField(max_length=255, blank=True)
-    plik = models.FileField(upload_to='documents/', blank=True)
+    plik = models.FileField(upload_to='uploads/', blank=True)
     data_upload = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
