@@ -19,6 +19,7 @@
             <p><strong> Zakończenie: </strong> {{ record.zakonczenie }} </p>
             <p><strong> Status: </strong> {{ record.status }} </p>
             <p><strong> Data utworzenia: </strong> {{ record.data_utworzenia }} </p>
+
         </div>
     </div>
     <br>
@@ -35,6 +36,7 @@
     <a href="{% url 'sms' record.id %}" class="btn btn-outline-primary"> SMS &nbsp;<i class="fa fa-comment"
                                                                                       aria-hidden="true"></i> </a>
     {{ my_record }}
-    <a href="{% url ''  %}" class="btn btn-outline-primary"> Dokumenty &nbsp;<i class="fa fa-file"
-                                                                                      aria-hidden="true"></i> </a>
+    <a href="{% url 'view_file' record.id %}" class="btn btn-outline-primary"> Dokumenty &nbsp;<i class="fa fa-file"
+                                                                                                  aria-hidden="true"></i>
+    </a>
 {% endblock %}

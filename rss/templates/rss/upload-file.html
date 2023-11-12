@@ -4,15 +4,15 @@
 {% block content %}
     <body>
     <div class="container bg-light shadow-md p-5 form-layout-add">
-        <h3> Wyślij sms </h3>
+        <h3> Wyślij plik </h3>
         <hr>
         <br>
-        <form method="POST" autocomplete="off">
+        <form method="POST" autocomplete="off" enctype="multipart/form-data">
+
             {% csrf_token %}
-            {{ form.content|as_crispy_field }}
-            <br>
-            {{ form.phone|as_crispy_field }}
-            <br>
+            {{ form.as_p }}
+
+
             <button type="submit" class="btn btn-outline-primary">Wyślij</button>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="{% url 'dashboard' %}" class="btn btn-secondary">Powrót</a>

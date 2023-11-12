@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("", views.home, name = ""),
@@ -18,6 +19,8 @@ urlpatterns = [
     path("sms/<int:pk>", views.sms_record, name = "sms"),
     path("pdf", views.pdf, name = "pdf"),
     path("search", views.search, name = "search"),
-    path("view_file", views.view_file, name = "view_file"),
-    path("upload_file", views.upload_file, name = "upload_file"),
+    path("view_file/<int:pk>", views.view_file, name = "view_file"),
+    path("upload_file/<int:pk>", views.upload_file, name = "upload_file"),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

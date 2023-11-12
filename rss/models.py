@@ -54,13 +54,12 @@ class Record(models.Model):
         default = zarzad,
     )
     content = models.TextField(max_length = 160, blank = True)
+    opis = models.CharField(max_length=255, blank=True)
+    plik = models.FileField(upload_to='documents/', blank=True)
+    data_upload = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.powod + "   " + self.dotyczy
 
-
-class Storage(models.Model):
-    tytul = models.CharField(max_length = 100)
-    file = CloudinaryField("image")
 
 

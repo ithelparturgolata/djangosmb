@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import CreateUserForm, LoginForm, AddRecordForm, UpdateRecordForm, SmsRecordForm
+from .forms import CreateUserForm, LoginForm, AddRecordForm, UpdateRecordForm, SmsRecordForm, UploadFileForm
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth import logout
@@ -13,6 +13,9 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter
 from django.contrib import messages
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+
 
 # homepage view
 def home(request):
@@ -222,13 +225,30 @@ def search(request):
         return render(request, "rss/dashboard-search.html", {})
 
 
-
+# view pozew pliki
 @login_required(login_url = "login")
-def view_file(request):
-    pass
+def view_file(request, pk):
+    my_record = Record.objects.get(id = pk)
+    context = {"record": my_record}
+
+    return render(request, "rss/view-file.html", context = context)
 
 
 
+#upload pozew pliki
 @login_required(login_url = "login")
-def upload_file(request):
-    pass
+def upload_file(request, pk):
+    record = Record.objects.get(id = pk)
+    form = UploadFileForm(instance = record)
+
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES, instance = record)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Dodano plik")
+            return redirect('dashboard')
+    else:
+        form = UploadFileForm()
+    context = {"form": form, "record": record}
+    return render(request, 'rss/upload-file.html', context = context)
+

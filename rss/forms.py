@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
-from .models import Record, Storage
+from .models import Record
 from django import forms
 from django.forms.widgets import PasswordInput, TextInput, FileInput
 
@@ -49,8 +49,7 @@ class SmsRecordForm(forms.ModelForm):
         fields = ["powod", "dotyczy", "phone", "content"]
 
 
-class AddFilePozew(forms.ModelForm):
-
+class UploadFileForm(forms.ModelForm):
     class Meta:
-        model = Storage
-        fields = ["tytul", "file"]
+        model = Record
+        fields = ('opis', 'plik')
