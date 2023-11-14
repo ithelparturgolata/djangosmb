@@ -172,6 +172,15 @@ def sms_record(request,  pk):
             page = request.GET.get("page")
             my_record = p.get_page(page)
 
+            # now = datetime.now()
+            # today = str(date.today())
+            # hour = now.strftime("%H:%M:%S")
+            # user = str(current_user)
+            # file = open("save/sms/sms_wspolnota.txt", "a+")
+            # file.write(
+            #     "Numery = " + phone + "\n" + "Budynek = " + SymbolBudynku + "\n" + "Tresc = " + content + "\n" + "Data: " + today + "\n" + str(
+            #         user) + "\n" + "Godzina: " + hour + "\n" + "-----------" + "\n")
+            # file.close
 
             return render(request, "rss/dashboard.html", {"records": my_records, "my_record": my_record})
 

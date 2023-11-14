@@ -16,7 +16,7 @@ SECRET_KEY = "django-insecure-v@uyg^v#5+4cr%#)dp8xz^*+m9933%ma_63qh=2be2g=!f9r$k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rss",
     "crispy_forms",
-    "cloudinary",
+
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -43,7 +43,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'django_auto_logout.middleware.auto_logout',
+    "django_auto_logout.middleware.auto_logout",
 ]
 
 ROOT_URLCONF = "djangosmb.urls"
@@ -129,7 +129,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTO_LOGOUT = {
-    'IDLE_TIME': 6000,
+    'IDLE_TIME': 120,
     'REDIRECT_TO_LOGIN_IMMEDIATELY': True,
     'MESSAGE': 'Sesja wygasła. Aby kontynuować, zaloguj się ponownie.',
 }
