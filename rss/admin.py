@@ -3,4 +3,3 @@ from . models import Record
 
 
 admin.site.register(Record)
-
