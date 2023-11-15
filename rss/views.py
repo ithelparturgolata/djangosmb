@@ -170,7 +170,7 @@ def sms_record(request,  pk):
         for char in to_remov.keys():
             content = content.replace(char, to_remov[char])
         if request.method == "POST":
-            token = "xxx"
+            token = "rM5DsJlOvDkbGnYnHAn9f9GmpphT0ovOywqPaiLL"
             client = SmsApiPlClient(access_token=token)
             send_results = client.sms.send(to=phone,
                                            message=content,

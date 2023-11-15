@@ -1,4 +1,4 @@
-from django.test import SimpleTestCase
+from django.test import SimpleTestCase, TestCase, Client
 from django.urls import resolve, reverse
 from rss.views import dashboard, dashboard_przeciw, dashboard_przez, create_record, pdf, search, login_view, logout_view, \
     register, update_record, view_record, delete
@@ -50,3 +50,11 @@ class TestUrls(SimpleTestCase):
         url = reverse("register")
         print(resolve(url))
         self.assertEqual(resolve(url).func, register)
+
+class TestViews(TestCase):
+    def view_records_GET(self):
+        client = Client
+        response = client.get(reverse(viewname="view_test"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "rss/dashboard.html")
