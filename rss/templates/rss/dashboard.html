@@ -4,9 +4,24 @@
 
     <h5> Witaj, {{ user }}! 👋 </h5>
     <hr>
-
     <a class="btn btn-outline-primary btn-sm" href="{% url 'create' %}">Dodaj pozew &nbsp;
         <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+    &nbsp;&nbsp;&nbsp;Filtr:
+
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'dashboard-przeciw' %}">Przeciwko Spółdzielni &nbsp;<i
+            class="fa fa-file-archive-o"
+            aria-hidden="true"></i> </a>
+    &nbsp;&nbsp;
+
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'dashboard-przez' %}">Przez &nbsp;Spółdzielnię&nbsp;<i
+            class="fa fa-file-o"
+            aria-hidden="true"></i> </a>
+
+    &nbsp;&nbsp;
+
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'pdf' %}">Raport &nbsp; <i class="fa fa-file-pdf-o"
+                                                                                      aria-hidden="true"></i>
+    </a>
     <hr>
     <br><br>
     <table class="table  table-bordered" id="sample_data">

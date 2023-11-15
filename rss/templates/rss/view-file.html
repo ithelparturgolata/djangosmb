@@ -19,8 +19,7 @@
         </div>
     </div>
     <br>
-    <a href="{% url 'view' record.id %}" class="btn btn-secondary"> Powrót &nbsp; <i class="fa fa-arrow-left"
-                                                                                     aria-hidden="true"></i> </a>
+    <a href="{% url 'view' record.id %}" class="btn btn-outline-primary"> Powrót &nbsp; <i class="fa fa-arrow-left"></i> </a>
     {{ my_record }}
     <a href="{% url 'upload_file' record.id %}" class="btn btn-outline-primary"> Wgraj plik &nbsp;<i class="fa fa-file"
                                                                                                       aria-hidden="true"></i>

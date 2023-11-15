@@ -118,6 +118,7 @@ def create_record(request):
 def update_record(request, pk):
     record = Record.objects.get(id=pk)
     form = UpdateRecordForm(instance=record)
+    all_records = Record.objects.get(id=pk)
 
     if request.method == 'POST':
         form = UpdateRecordForm(request.POST, instance=record)
@@ -127,8 +128,8 @@ def update_record(request, pk):
             messages.success(request, "Zaktualizowano pozew")
             return redirect("dashboard")
 
-    context = {"form": form}
-    return render(request, "rss/update-record.html", context=context)
+    # context = {"form": form}
+    return render(request, "rss/update-record.html", {"form": form, "record": record, "all_records": all_records})
 
 
 # view pozew
@@ -154,8 +155,10 @@ def delete(request, pk):
 def sms_record(request,  pk):
     record = Record.objects.get(id=pk)
     form = SmsRecordForm(instance=record)
-    my_records = Record.objects.all()
+    all_records = Record.objects.get(id=pk)
     context = {}
+
+
 
     if request.method == "POST":
         phone = request.POST.get("phone")
@@ -181,7 +184,7 @@ def sms_record(request,  pk):
             my_record = p.get_page(page)
 
             return render(request, "rss/dashboard.html",
-                          {"records": my_records, "my_record": my_record})
+                          {"form": form, "record": record, "all_records": all_records})
 
     context = {"form": form}
     return render(request, "rss/sms-record.html", context=context)

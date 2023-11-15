@@ -51,10 +51,3 @@ class TestUrls(SimpleTestCase):
         print(resolve(url))
         self.assertEqual(resolve(url).func, register)
 
-class TestViews(TestCase):
-    def view_records_GET(self):
-        client = Client
-        response = client.get(reverse(viewname="view_test"))
-
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "rss/dashboard.html")

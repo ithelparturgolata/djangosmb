@@ -133,5 +133,3 @@ AUTO_LOGOUT = {
     'REDIRECT_TO_LOGIN_IMMEDIATELY': True,
     'MESSAGE': 'Sesja wygasła. Aby kontynuować, zaloguj się ponownie.',
 }
-
-

@@ -29,9 +29,14 @@
             <br>
             {{ form.kto|as_crispy_field }}
             <br>
+            {{ my_record }}
+            <a href="{% url 'view' record.id %}" class="btn btn-outline-primary"> Powrót &nbsp;<i
+                    class="fa fa-arrow-left"
+                    aria-hidden="true"></i>
+            </a>
             <button type="submit" class="btn btn-outline-primary">Zapisz</button>
             &nbsp;&nbsp;&nbsp;
-            <a href="{% url 'dashboard' %}" class="btn btn-secondary">Powrót</a>
+
         </form>
     </div>
     <br>
