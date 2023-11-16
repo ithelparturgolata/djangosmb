@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+
+class Mieszkaniec(models.Model):
+    data_utworzenia = models.DateTimeField(auto_now_add=True)
+
