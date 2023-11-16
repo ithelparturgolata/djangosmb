@@ -129,7 +129,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTO_LOGOUT = {
-    'IDLE_TIME': 120,
+    'IDLE_TIME': 6000,
     'REDIRECT_TO_LOGIN_IMMEDIATELY': True,
     'MESSAGE': 'Sesja wygasła. Aby kontynuować, zaloguj się ponownie.',
 }

@@ -155,8 +155,7 @@ def delete(request, pk):
 def sms_record(request,  pk):
     record = Record.objects.get(id=pk)
     form = SmsRecordForm(instance=record)
-    all_records = Record.objects.get(id=pk)
-    context = {}
+    my_record = Record.objects.get(id=pk)
 
 
 
@@ -184,9 +183,9 @@ def sms_record(request,  pk):
             my_record = p.get_page(page)
 
             return render(request, "rss/dashboard.html",
-                          {"form": form, "record": record, "all_records": all_records})
+                          {"form": form, "record": record, "my_record": my_record})
 
-    context = {"form": form}
+    context = {"form": form, "record": record, "my_record": my_record}
     return render(request, "rss/sms-record.html", context=context)
 
 
@@ -248,9 +247,9 @@ def view_file(request, pk):
 # upload pozew pliki
 @login_required(login_url="login")
 def upload_file(request, pk):
-
     record = Record.objects.get(id=pk)
     form = UploadFileForm(instance=record)
+    my_record = Record.objects.get(id=pk)
 
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES, instance=record)
@@ -260,5 +259,5 @@ def upload_file(request, pk):
             return redirect('view_file', pk)
     else:
         form = UploadFileForm()
-    context = {"form": form, "record": record}
+    context = {"form": form, "record": record, "my_record": my_record}
     return render(request, 'rss/upload-file.html', context=context)

@@ -8,12 +8,15 @@
         <hr>
         <br>
         <form method="POST" autocomplete="off">
+                        <p><strong> Powód: </strong> {{ record.powod }} </p>
+            <p><strong> Dotyczy: </strong> {{ record.dotyczy }} </p>
             {% csrf_token %}
             {{ form.content|as_crispy_field }}
             <br>
             {{ form.phone|as_crispy_field }}
             <br>
-                <a href="{% url 'dashboard' %}" class="btn btn-outline-primary"> Powrót &nbsp; <i class="fa fa-arrow-left"></i> </a>
+                 <a href="{% url 'view' record.id %}" class="btn btn-outline-primary"> Powrót &nbsp; <i class="fa fa-arrow-left"></i> </a>
+
             <button type="submit" class="btn btn-outline-primary">Wyślij</button>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </form>
