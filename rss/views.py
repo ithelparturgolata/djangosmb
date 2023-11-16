@@ -19,67 +19,71 @@ from django.core.files.storage import FileSystemStorage
 
 
 # homepage view
-def home(request):
-    return render(request, ("rss/index.html"))
+# def home(request):
+#     return render(request, ("rss/index.html"))
 
 
 # register view
-def register(request):
-    form = CreateUserForm()
-
-    if request.method == "POST":
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-    context = {"form": form}
-    return render(request, "rss/register.html", context=context)
+# def register(request):
+#     form = CreateUserForm()
+#
+#     if request.method == "POST":
+#         form = CreateUserForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#
+#     context = {"form": form}
+#     return render(request, "rss/register.html", context=context)
 
 
 # login view
-def login_view(request):
-    form = LoginForm()
-
-    if request.method == "POST":
-        form = LoginForm(request, data=request.POST)
-        if form.is_valid():
-            username = request.POST.get("username")
-            password = request.POST.get("password")
-
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                auth.login(request, user)
-                messages.success(request, "Zalogowano")
-
-                return redirect("dashboard_main")
-
-    context = {"form": form}
-    return render(request, "rss/login.html", context=context)
+# def login_view(request):
+#     form = LoginForm()
+#
+#     if request.method == "POST":
+#         form = LoginForm(request, data=request.POST)
+#         if form.is_valid():
+#             username = request.POST.get("username")
+#             password = request.POST.get("password")
+#
+#             user = authenticate(request, username=username, password=password)
+#             if user is not None:
+#                 auth.login(request, user)
+#                 messages.success(request, "Zalogowano")
+#
+#                 return redirect("dashboard")
+#
+#     context = {"form": form}
+#     return render(request, "rss/login.html", context=context)
 
 
 # logout view
-def logout_view(request):
-    auth.logout(request)
-    messages.success(request, "Wylogowano")
-    return redirect("login")
+# def logout_view(request):
+#     auth.logout(request)
+#     messages.success(request, "Wylogowano")
+#     return redirect("login")
 
 
 @login_required(login_url="login")
 def dashboard_main(request):
-
-    return render(request, "rss/dashboard_main.html")
-
-
-# dashboard view
-@login_required(login_url="login")
-def dashboard(request):
     my_records = Record.objects.all()
     p = Paginator(Record.objects.all(), 10)
     page = request.GET.get("page")
     my_record = p.get_page(page)
 
-    return render(request, "rss/dashboard.html",
+    return render(request, "rss/dashboard-main.html",
                   {"records": my_records, "my_record": my_record})
+
+# dashboard view
+# @login_required(login_url="login")
+# def dashboard(request):
+#     my_records = Record.objects.all()
+#     p = Paginator(Record.objects.all(), 10)
+#     page = request.GET.get("page")
+#     my_record = p.get_page(page)
+#
+#     return render(request, "rss/dashboard-main.html",
+#                   {"records": my_records, "my_record": my_record})
 
 
 @login_required(login_url="login")
@@ -114,7 +118,7 @@ def create_record(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Dodano pozew")
-            return redirect("dashboard")
+            return redirect("dashboard_main")
     context = {"form": form}
     return render(request, "rss/create-record.html", context=context)
 
@@ -132,7 +136,7 @@ def update_record(request, pk):
         if form.is_valid():
             form.save()
             messages.success(request, "Zaktualizowano pozew")
-            return redirect("dashboard")
+            return redirect("dashboard_main")
 
     # context = {"form": form}
     return render(request, "rss/update-record.html", {"form": form, "record": record, "all_records": all_records})
@@ -153,7 +157,7 @@ def delete(request, pk):
     record = Record.objects.get(id=pk)
     record.delete()
     messages.success(request, "Skasowano pozew")
-    return redirect("dashboard")
+    return redirect("dashboard_main")
 
 
 # sms pozew
@@ -188,7 +192,7 @@ def sms_record(request,  pk):
             page = request.GET.get("page")
             my_record = p.get_page(page)
 
-            return render(request, "rss/dashboard.html",
+            return render(request, "rss/dashboard-main.html",
                           {"form": form, "record": record, "my_record": my_record})
 
     context = {"form": form, "record": record, "my_record": my_record}

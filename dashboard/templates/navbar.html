@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-center">
-    <a class="navbar-brand main-heading" href="{% url 'dashboard_main' %}">
-        &nbsp; Rejestr Spraw Sądowcyh
+    <a class="navbar-brand main-heading" href="{% url 'dashboard' %}">
+        &nbsp; Panel SM
     </a>
-
     <button
             class="navbar-toggler"
             type="button"
@@ -14,22 +13,21 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-&nbsp; &nbsp; &nbsp;
+        <ul class="navbar-nav ms-auto">
+            &nbsp; &nbsp; &nbsp;
             {% if user.is_authenticated %}
-                                <li class="nav-item">
-                    <a class="btn btn-outline-success" href="{% url 'dashboard' %}">Panel SM &nbsp; <i
-                            class="fa fa-home"
-                            aria-hidden="true"></i> </a>
-                                </li>
-                </ul>
-<ul class="navbar-nav ms-auto">
-                <form class="d-flex" role="search" method="POST" action="{% url "search" %}">
-                    {% csrf_token %}
-                    <input class="form-control me-2" type="search" placeholder="..." aria-label="Search"
-                           name="searched">
-                    <button class="btn btn-outline-success" type="submit">Szukaj</button>
-                </form>
+{#                <li class="nav-item">#}
+{#                    <a class="btn btn-outline-success" href="{% url 'dashboard' %}">Dashboard &nbsp; <i#}
+{#                            class="fa fa-home"#}
+{#                            aria-hidden="true"></i> </a>#}
+{#                </li>&nbsp;&nbsp;&nbsp;#}
+
+{#                <form class="d-flex" role="search" method="POST" action="{% url "search" %}">#}
+{#                    {% csrf_token %}#}
+{#                    <input class="form-control me-2" type="search" placeholder="..." aria-label="Search"#}
+{#                           name="searched">#}
+{#                    <button class="btn btn-outline-success" type="submit">Szukaj</button>#}
+{#                </form>#}
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="nav-item">
                     <a class="btn btn-outline-success" href="{% url 'logout' %}">Wyloguj się &nbsp; <i
