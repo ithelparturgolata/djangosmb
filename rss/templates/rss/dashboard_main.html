@@ -1,0 +1,59 @@
+{% extends 'rss/base-main.html' %}
+
+{% block content %}
+
+    <h5> Witaj, {{ user }}! 👋 </h5>
+    <hr>
+    <div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Rejestr Spraw sądowych</h5>
+          <hr>
+        <p class="card-text">Baza pozwów Spółdzielni wraz z dokumentacją.<br><br></p>
+        <a href="{% url 'dashboard' %}" class="btn btn-primary">Otwórz</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Baza telefonów</h5>
+          <hr>
+        <p class="card-text">Baza telefonów mieszkańców z podziałem na Administracje.</p>
+        <a href="#" class="btn btn-primary">Otwórz</a>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Panel SMS</h5>
+          <hr>
+        <p class="card-text">Wkrótce.<br><br></p>
+        <a href="#" class="btn btn-primary">Otwórz</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <br><br>
+    <hr>
+
+{#    <nav aria-label="Page navigation example">#}
+{#        <ul class="pagination">#}
+{#            {% if my_record.has_previous %}#}
+{#                <li class="page-item"><a class="page-link"#}
+{#                                         href="?page={{ my_record.previous_page_number }}">Poprzednia</a></li>#}
+{#                <li class="page-item"><a class="page-link" href="?page=1">1</a></li>#}
+{#            {% endif %}#}
+{#            {% if my_record.has_next %}#}
+{#                <li class="page-item"><a class="page-link" href="?page=2">2</a></li>#}
+{#                <li class="page-item"><a class="page-link" href="?page=3">3</a></li>#}
+{#                <li class="page-item"><a class="page-link" href="?page={{ my_record.next_page_number }}">Następna</a>#}
+{#                </li>#}
+{#            {% endif %}#}
+{#        </ul>#}
+{#    </nav>#}
+    {{ redirect_to_login_immediately }}
+{% endblock %}

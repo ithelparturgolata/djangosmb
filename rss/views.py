@@ -51,7 +51,7 @@ def login_view(request):
                 auth.login(request, user)
                 messages.success(request, "Zalogowano")
 
-                return redirect("dashboard")
+                return redirect("dashboard_main")
 
     context = {"form": form}
     return render(request, "rss/login.html", context=context)
@@ -62,6 +62,12 @@ def logout_view(request):
     auth.logout(request)
     messages.success(request, "Wylogowano")
     return redirect("login")
+
+
+@login_required(login_url="login")
+def dashboard_main(request):
+
+    return render(request, "rss/dashboard_main.html")
 
 
 # dashboard view
