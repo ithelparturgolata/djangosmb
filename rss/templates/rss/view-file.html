@@ -19,9 +19,10 @@
         </div>
     </div>
     <br>
-    <a href="{% url 'view' record.id %}" class="btn btn-outline-primary"> Powrót &nbsp; <i class="fa fa-arrow-left"></i> </a>
+    <a href="{% url 'view_rss' record.id %}" class="btn btn-outline-primary"> Powrót &nbsp; <i
+            class="fa fa-arrow-left"></i> </a>
     {{ my_record }}
     <a href="{% url 'upload_file' record.id %}" class="btn btn-outline-primary"> Wgraj plik &nbsp;<i class="fa fa-file"
-                                                                                                      aria-hidden="true"></i>
+                                                                                                     aria-hidden="true"></i>
     </a>
 {% endblock %}

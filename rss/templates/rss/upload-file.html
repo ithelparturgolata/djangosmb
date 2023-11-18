@@ -14,7 +14,8 @@
             <p><strong> Dotyczy: </strong> {{ record.dotyczy }} </p>
             {{ form.as_p }}
 
-             <a href="{% url 'view' record.id %}" class="btn btn-outline-primary"> Powrót &nbsp; <i class="fa fa-arrow-left"></i> </a>
+            <a href="{% url 'view_rss' record.id %}" class="btn btn-outline-primary"> Powrót &nbsp; <i
+                    class="fa fa-arrow-left"></i> </a>
 
             <button type="submit" class="btn btn-outline-primary">Wyślij</button>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

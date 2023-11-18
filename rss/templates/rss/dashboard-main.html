@@ -4,7 +4,7 @@
 
     <h5> Witaj, {{ user }}! 👋 </h5>
     <hr>
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'create' %}">Dodaj pozew &nbsp;
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'create_rss' %}">Dodaj pozew &nbsp;
         <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
     &nbsp;&nbsp;&nbsp;Filtr:
 
@@ -19,7 +19,7 @@
 
     &nbsp;&nbsp;
 
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'pdf' %}">Raport &nbsp; <i class="fa fa-file-pdf-o"
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'pdf_rss' %}">Raport &nbsp; <i class="fa fa-file-pdf-o"
                                                                                       aria-hidden="true"></i>
     </a>
     <hr>
@@ -42,7 +42,7 @@
                     <td> {{ record.powod }}</td>
                     <td> {{ record.dotyczy }} </td>
                     <td> {{ record.status }} </td>
-                    <td><a class="btn btn-outline-primary btn-sm" href="{% url 'view' record.id %}">
+                    <td><a class="btn btn-outline-primary btn-sm" href="{% url 'view_rss' record.id %}">
                         <i class="fa fa-eye" aria-hidden="true"></i> </a></td>
                 </tr>
             {% endfor %}

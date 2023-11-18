@@ -1,27 +1,31 @@
-{% extends 'rss/base.html' %}
+{% extends 'base-telefony.html' %}
 
 {% block content %}
 
     <h5> Witaj, {{ user }}! 👋 </h5>
     <hr>
-
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'create_rss' %}">Dodaj pozew &nbsp; <i class="fa fa-plus-circle"
-                                                                                              aria-hidden="true"></i></a>
-
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'create' %}">Dodaj Kontrahenta &nbsp;
+        <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
     &nbsp;&nbsp;&nbsp;Filtr:
 
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'dashboard-przeciw' %}">Przeciwko Spółdzielni &nbsp;<i
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'dashboard-ce' %}">Administracja Centrum &nbsp;<i
             class="fa fa-file-archive-o"
             aria-hidden="true"></i> </a>
     &nbsp;&nbsp;
 
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'dashboard-przez' %}">Przez &nbsp;Spółdzielnię&nbsp;<i
+
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'dashboard-nw' %}">Administracja Na Wyżynach &nbsp;<i
+            class="fa fa-file-archive-o"
+            aria-hidden="true"></i> </a>
+    &nbsp;&nbsp;
+
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'dashboard-ns' %}">Administracja Na Skarpie&nbsp;<i
             class="fa fa-file-o"
             aria-hidden="true"></i> </a>
 
     &nbsp;&nbsp;
 
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'pdf_rss' %}">Raport &nbsp; <i class="fa fa-file-pdf-o"
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'pdf' %}">Raport &nbsp; <i class="fa fa-file-pdf-o"
                                                                                       aria-hidden="true"></i>
     </a>
     <hr>
@@ -30,29 +34,27 @@
         <thead class="table-light">
         <tr>
             <th scope="col"> ID</th>
-            <th scope="col"> Powód</th>
-            <th scope="col"> Dotyczy</th>
-            <th scope="col"> Status</th>
+            <th scope="col"> Indeks</th>
+            <th scope="col"> Nazwa</th>
+            <th scope="col"> Adres</th>
+            <th scope="col"> Telefon</th>
             <th scope="col"> Szczegóły</th>
-            {#                <th scope="col"> SMS </th>#}
         </tr>
         </thead>
         <tbody>
-
-        {% for record in records %}
-            {% if record.kto == "Pozew przeciwko Spółdzielni" %}
+        {% if records %}
+            {% for record in my_record %}
                 <tr>
                     <td> {{ record.id }} </td>
-                    <td> {{ record.powod }}</td>
-                    <td> {{ record.dotyczy }} </td>
-                    <td> {{ record.status }} </td>
-                    <td><a class="btn btn-outline-primary btn-sm" href="{% url 'view_rss' record.id %}"> <i
-                            class="fa fa-eye" aria-hidden="true"></i> </a></td>
-                    {#                <td> <a class="btn btn-outline-primary btn-sm" href="{% url ''  %}"> <i class="fa fa-comment" aria-hidden="true"></i> </a> </td>#}
+                    <td> {{ record.indeks }} </td>
+                    <td> {{ record.nazwa }}</td>
+                    <td> {{ record.adres }} </td>
+                    <td> {{ record.telefon }} </td>
+                    <td><a class="btn btn-outline-primary btn-sm" href="{% url 'view' record.id %}">
+                        <i class="fa fa-eye" aria-hidden="true"></i> </a></td>
                 </tr>
-            {% endif %}
-
-        {% endfor %}
+            {% endfor %}
+        {% endif %}
 
         </tbody>
     </table>
@@ -74,5 +76,5 @@
             {% endif %}
         </ul>
     </nav>
-
+    {{ redirect_to_login_immediately }}
 {% endblock %}
