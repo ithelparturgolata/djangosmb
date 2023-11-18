@@ -5,13 +5,13 @@
     <h5> Witaj, {{ user }}! 👋 </h5>
     <hr>
 
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'create' %}">Dodaj pozew &nbsp; <i class="fa fa-plus-circle"
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'create_telefony' %}">Dodaj pozew &nbsp; <i class="fa fa-plus-circle"
                                                                                               aria-hidden="true"></i></a>
     <hr>
     <br><br>
     <table class="table  table-bordered" id="sample_data">
         <thead class="table-light">
-           <tr>
+        <tr>
             <th scope="col"> ID</th>
             <th scope="col"> Indeks</th>
             <th scope="col"> Nazwa</th>
@@ -30,7 +30,7 @@
                     <td> {{ record.nazwa }}</td>
                     <td> {{ record.adres }} </td>
                     <td> {{ record.telefon }} </td>
-                    <td><a class="btn btn-outline-primary btn-sm" href="{% url 'view' record.id %}">
+                    <td><a class="btn btn-outline-primary btn-sm" href="{% url 'view_telefony' record.id %}">
                         <i class="fa fa-eye" aria-hidden="true"></i> </a></td>
                 </tr>
             {% endfor %}
@@ -42,6 +42,7 @@
     <hr>
 
     <a class="btn btn-outline-success" href="{% url 'dashboard_telefony' %}">Powrót &nbsp; <i class="fa fa-sign-in"
-                                                                                     aria-hidden="true"></i> </a>
+                                                                                              aria-hidden="true"></i>
+    </a>
 
 {% endblock %}

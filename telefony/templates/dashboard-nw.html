@@ -4,7 +4,7 @@
 
     <h5> Witaj, {{ user }}! 👋 </h5>
     <hr>
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'create' %}">Dodaj Kontrahenta &nbsp;
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'create_telefony' %}">Dodaj Kontrahenta &nbsp;
         <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
     &nbsp;&nbsp;&nbsp;Filtr:
 
@@ -25,8 +25,8 @@
 
     &nbsp;&nbsp;
 
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'pdf' %}">Raport &nbsp; <i class="fa fa-file-pdf-o"
-                                                                                      aria-hidden="true"></i>
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'pdf_telefony' %}">Raport &nbsp; <i class="fa fa-file-pdf-o"
+                                                                                               aria-hidden="true"></i>
     </a>
     <hr>
     <br><br>
@@ -51,7 +51,7 @@
                     <td> {{ record.nazwa }}</td>
                     <td> {{ record.adres }} </td>
                     <td> {{ record.telefon }} </td>
-                    <td><a class="btn btn-outline-primary btn-sm" href="{% url 'view' record.id %}">
+                    <td><a class="btn btn-outline-primary btn-sm" href="{% url 'view_telefony' record.id %}">
                         <i class="fa fa-eye" aria-hidden="true"></i> </a></td>
                 </tr>
             {% endif %}
