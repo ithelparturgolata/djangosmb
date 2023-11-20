@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from telefony.forms import AddRecordFormTelefony, UpdateRecordFormTelefony, SmsRecordFormTelefony
+from telefony.forms import AddRecordFormTelefony, \
+    UpdateRecordFormTelefony, SmsRecordFormTelefony
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth import logout
@@ -9,6 +10,7 @@ from smsapi.client import SmsApiPlClient
 from django.core.paginator import Paginator
 from django.http import FileResponse
 import io
+from django.db import connection
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter
@@ -26,7 +28,6 @@ def dashboard_telefony(request):
 
     return render(request, "dashboard-telefony.html",
                   {"records": my_records, "my_record": my_record})
-
 
 
 @login_required(login_url="login")
@@ -93,12 +94,13 @@ def update_record(request, pk):
             return redirect("dashboard_telefony")
 
     # context = {"form": form}
-    return render(request, "telefony-update.html", {"form": form, "record": record, "all_records": all_records})
+    return render(request, "telefony-update.html",
+                  {"form": form, "record": record, "all_records": all_records})
 
 
 # view pozew
 @login_required(login_url="login")
-def view_record(request,  pk):
+def view_record(request, pk):
     all_records = Mieszkaniec.objects.get(id=pk)
     context = {"record": all_records}
 
@@ -116,11 +118,10 @@ def delete(request, pk):
 
 # sms pozew
 @login_required(login_url="login")
-def sms_record(request,  pk):
+def sms_record(request, pk):
     record = Mieszkaniec.objects.get(id=pk)
     form = SmsRecordFormTelefony(instance=record)
     my_record = Mieszkaniec.objects.get(id=pk)
-
 
     if request.method == "POST":
         phone = request.POST.get("phone")
@@ -146,7 +147,8 @@ def sms_record(request,  pk):
             my_record = p.get_page(page)
 
             return render(request, "telefony-sms.html",
-                          {"form": form, "record": record, "my_record": my_record})
+                          {"form": form, "record": record,
+                           "my_record": my_record})
 
     context = {"form": form, "record": record, "my_record": my_record}
     return render(request, "telefony-sms.html", context=context)
@@ -190,11 +192,9 @@ def pdf(request):
 def search(request):
     if request.method == "POST":
         searched = request.POST["searched"]
-        my_records = Mieszkaniec.objects.filter(powod__contains=searched)
+        my_records = Mieszkaniec.objects.filter(nazwa__contains=searched) | Mieszkaniec.objects.filter(indeks__contains=searched) | Mieszkaniec.objects.filter(adres__contains=searched)
 
         return render(request, "telefony-search.html",
                       {"searched": searched, "my_records": my_records})
     else:
         return render(request, "telefony-search.html", {})
-
-

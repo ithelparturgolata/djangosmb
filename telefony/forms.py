@@ -6,7 +6,6 @@ from django import forms
 from django.forms.widgets import PasswordInput, TextInput, FileInput
 
 
-
 class AddRecordFormTelefony(forms.ModelForm):
     indeks = forms.CharField(label="Indeks", max_length=7)
     nazwa = forms.CharField(label="Nazwisko i Imię", max_length=255)
@@ -14,14 +13,16 @@ class AddRecordFormTelefony(forms.ModelForm):
     klatka = forms.CharField(label="Klatka",
                              max_length=2)
     telefon = forms.CharField(label="Telefon",
-                             max_length=9)
-    zgoda = forms.CharField(label="Zgoda tak/nie",
-                                  max_length=3)
+                              max_length=9)
+    zgoda = forms.CharField(label="Zgoda",
+                            max_length=3)
     administracja = forms.CharField(label="Administracja",
-                            max_length=2)
+                                    max_length=2)
+
     class Meta:
         model = Mieszkaniec
-        fields = ["indeks", "nazwa", "adres", "klatka", "telefon", "zgoda", "administracja"]
+        fields = ["indeks", "nazwa", "adres", "klatka",
+                  "telefon", "zgoda", "administracja"]
 
 
 class UpdateRecordFormTelefony(forms.ModelForm):
@@ -29,17 +30,16 @@ class UpdateRecordFormTelefony(forms.ModelForm):
     klatka = forms.CharField(label="Klatka",
                              max_length=2)
     telefon = forms.CharField(label="Telefon",
-                             max_length=9)
+                              max_length=9)
     zgoda = forms.CharField(label="Zgoda tak/nie",
-                                  max_length=3)
+                            max_length=3)
+
     class Meta:
         model = Mieszkaniec
         fields = ["nazwa", "klatka", "telefon", "zgoda"]
 
 
 class SmsRecordFormTelefony(forms.ModelForm):
-
     class Meta:
         model = Mieszkaniec
-        fields = ["indeks", "nazwa", "phone", "content"]
-
+        fields = ["indeks", "nazwa", "phone", "content", "telefon"]

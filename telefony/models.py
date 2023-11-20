@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 class Mieszkaniec(models.Model):
     data_utworzenia = models.DateTimeField(auto_now_add=True)
     indeks = models.CharField(max_length=7, blank=True)
@@ -9,6 +8,7 @@ class Mieszkaniec(models.Model):
     adres = models.CharField(max_length=255, blank=True)
     klatka = models.CharField(max_length=2, blank=True)
     telefon = models.CharField(max_length=9, blank=True)
+    symbol_budynku = models.CharField(max_length=4, blank=True)
     tak = "tak"
     nie = "nie"
     zgoda_wybor = [

@@ -4,7 +4,7 @@
         <div class="card-body">
             <i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;
             <strong>
-                Kontrahent:&nbsp;&nbsp;&nbsp;{{ record.powod|upper }}
+                Kontrahent:&nbsp;&nbsp;&nbsp;{{ record.nazwa|upper }}
                 {#                {{record.dotyczy}}#}
             </strong>
             <hr>
@@ -25,14 +25,16 @@
             class="fa fa-arrow-left"></i> </a>
     &nbsp;
     <a href="{% url 'update_telefony' record.id %}" class="btn btn-outline-primary"> Edytuj &nbsp; <i class="fa fa-plus"
-                                                                                             aria-hidden="true"></i>
+                                                                                                      aria-hidden="true"></i>
     </a>
     &nbsp;
-    <a href="{% url 'delete_telefony' record.id %}" class="btn btn-outline-primary"> Skasuj &nbsp;<i class="fa fa-minus-square"
-                                                                                            aria-hidden="true"></i> </a>
+    <a href="{% url 'delete_telefony' record.id %}" class="btn btn-outline-primary"> Skasuj &nbsp;<i
+            class="fa fa-minus-square"
+            aria-hidden="true"></i> </a>
     &nbsp;
     <a href="{% url 'sms_telefony' record.id %}" class="btn btn-outline-primary"> SMS &nbsp;<i class="fa fa-comment"
-                                                                                      aria-hidden="true"></i> </a>
+                                                                                               aria-hidden="true"></i>
+    </a>
     {{ my_record }}
     {#    <a href="{% url 'view_file' record.id %}" class="btn btn-outline-primary"> Dokumenty &nbsp;<i class="fa fa-file"#}
     {#                                                                                                  aria-hidden="true"></i>#}

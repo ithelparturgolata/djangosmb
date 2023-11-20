@@ -14,3 +14,6 @@ urlpatterns = [
     path("dashboard", views.dashboard, name="dashboard"),
     path("dashboard_main", views.dashboard_main, name="dashboard_main"),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

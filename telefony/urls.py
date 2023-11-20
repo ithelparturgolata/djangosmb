@@ -4,7 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path("dashboard_telefony", views.dashboard_telefony, name="dashboard_telefony"),
+    path("dashboard_telefony", views.dashboard_telefony,
+         name="dashboard_telefony"),
     path("dashboard_ce", views.dashboard_ce,
          name="dashboard-ce"),
     path("dashboard_nw", views.dashboard_nw,
@@ -19,3 +20,6 @@ urlpatterns = [
     path("pdf", views.pdf, name="pdf_telefony"),
     path("search", views.search, name="search_telefony"),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
