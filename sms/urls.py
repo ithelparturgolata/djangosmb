@@ -6,6 +6,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("dashboard_sms", views.dashboard_sms,
          name="dashboard_sms"),
+    path("dashboard_sms_kontrahent", views.dashboard_sms_kontrahent,
+         name="dashboard-sms-kontrahent"),
+    path("dashboard_sms_blok", views.dashboard_sms_blok,
+         name="dashboard-sms-blok"),
     path("dashboard_ce_sms", views.dashboard_ce_sms,
          name="dashboard-ce-sms"),
     path("dashboard_ce_sms_blok", views.dashboard_ce_sms_blok,
@@ -18,7 +22,6 @@ urlpatterns = [
          name="dashboard-ns-sms"),
     path("dashboard_ns_sms_blok", views.dashboard_ns_sms_blok,
          name="dashboard-ns-sms-blok"),
-
     path("view/<int:pk>", views.view_record_sms, name="sms-view"),
     path("sms/<int:pk>", views.sms_record_sms, name="sms-sms"),
     path("search", views.search, name="search-sms"),
