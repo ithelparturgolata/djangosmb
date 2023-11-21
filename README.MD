@@ -5,7 +5,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-# Rejestr Spraw Sądowych
+# Panel SM
 > RSS to webowa aplikacja. Celem jest ujednolicenie miejsca przechowywania wszystkich pozwów zarówno przeciwko Spółdzielni jak i wniesionych przez Spółdzielnię
 
 ## Menu

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-center">
-    <a class="navbar-brand main-heading" href="{% url 'dashboard_main' %}">
-        &nbsp; Rejestr Spraw Sądowcyh - Menu
+    <a class="navbar-brand main-heading" href="{% url 'dashboard_sms' %}">
+        &nbsp; Panel SMS - Menu
     </a>
 
     <button
@@ -24,7 +24,7 @@
                 </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
-                    <form class="d-flex" role="search" method="POST" action="{% url "search_rss" %}">
+                    <form class="d-flex" role="search" method="POST" action="{% url "search-sms" %}">
                         {% csrf_token %}
                         <input class="form-control me-2" type="search" placeholder="..." aria-label="Search"
                                name="searched">

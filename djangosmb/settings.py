@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "rss",
     "crispy_forms",
     "telefony",
+    "sms",
 
 ]
 

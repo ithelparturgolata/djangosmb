@@ -10,4 +10,5 @@ urlpatterns = [
     path("", include("dashboard.urls")),
     path("rss/", include("rss.urls")),
     path("telefony/", include("telefony.urls")),
+    path("sms/", include("sms.urls")),
 ]
