@@ -32,8 +32,8 @@ def dashboard_telefony(request):
 
 @login_required(login_url="login")
 def dashboard_ce(request):
-    my_records = Mieszkaniec.objects.all()
-    p = Paginator(Mieszkaniec.objects.all(), 10)
+    my_records = Mieszkaniec.objects.all().filter(administracja="ce")
+    p = Paginator(Mieszkaniec.objects.all().filter(administracja="ce"), 10)
     page = request.GET.get("page")
     my_record = p.get_page(page)
 
@@ -43,8 +43,8 @@ def dashboard_ce(request):
 
 @login_required(login_url="login")
 def dashboard_ns(request):
-    my_records = Mieszkaniec.objects.all()
-    p = Paginator(Mieszkaniec.objects.all(), 10)
+    my_records = Mieszkaniec.objects.all().filter(administracja="ns")
+    p = Paginator(Mieszkaniec.objects.all().filter(administracja="ns"), 10)
     page = request.GET.get("page")
     my_record = p.get_page(page)
 
@@ -54,8 +54,8 @@ def dashboard_ns(request):
 
 @login_required(login_url="login")
 def dashboard_nw(request):
-    my_records = Mieszkaniec.objects.all()
-    p = Paginator(Mieszkaniec.objects.all(), 10)
+    my_records = Mieszkaniec.objects.all().filter(administracja="nw")
+    p = Paginator(Mieszkaniec.objects.all().filter(administracja="nw"), 10)
     page = request.GET.get("page")
     my_record = p.get_page(page)
 
