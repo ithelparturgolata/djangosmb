@@ -42,19 +42,19 @@
         </tr>
         </thead>
         <tbody>
-        {% if records %}
-            {% for record in my_record %}
-                <tr>
-                    <td> {{ record.id }} </td>
-                    <td> {{ record.indeks }} </td>
-                    <td> {{ record.nazwa }}</td>
-                    <td> {{ record.adres }} </td>
-                    <td> {{ record.telefon }} </td>
-                    <td><a class="btn btn-outline-primary btn-sm" href="{% url 'view_telefony' record.id %}">
-                        <i class="fa fa-eye" aria-hidden="true"></i> </a></td>
-                </tr>
-            {% endfor %}
-        {% endif %}
+        {#        {% if records %}#}
+        {% for record in my_record %}
+            <tr>
+                <td> {{ record.id }} </td>
+                <td> {{ record.indeks }} </td>
+                <td> {{ record.nazwa }}</td>
+                <td> {{ record.adres }} </td>
+                <td> {{ record.telefon }} </td>
+                <td><a class="btn btn-outline-primary btn-sm" href="{% url 'view_telefony' record.id %}">
+                    <i class="fa fa-eye" aria-hidden="true"></i> </a></td>
+            </tr>
+        {% endfor %}
+        {#        {% endif %}#}
 
         </tbody>
     </table>
@@ -66,11 +66,11 @@
             {% if my_record.has_previous %}
                 <li class="page-item"><a class="page-link"
                                          href="?page={{ my_record.previous_page_number }}">Poprzednia</a></li>
-                <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+                {#                <li class="page-item"><a class="page-link" href="?page=1">1</a></li>#}
             {% endif %}
             {% if my_record.has_next %}
-                <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
-                <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+                {#                <li class="page-item"><a class="page-link" href="?page=2">2</a></li>#}
+                {#                <li class="page-item"><a class="page-link" href="?page=3">3</a></li>#}
                 <li class="page-item"><a class="page-link" href="?page={{ my_record.next_page_number }}">Następna</a>
                 </li>
             {% endif %}
