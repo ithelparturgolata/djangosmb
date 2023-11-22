@@ -1,9 +1,9 @@
-{% extends 'base-sms.html' %}
+{% extends 'base-sms-blok.html' %}
 
 {% block content %}
 
     <h5> Witaj, {{ user }}! 👋 </h5>
-    <hr>
+
 
 {#    <a class="btn btn-outline-primary btn-sm" href="{% url 'create_telefony' %}">Dodaj Kontrahenta &nbsp; <i#}
 {#            class="fa fa-plus-circle"#}
@@ -15,9 +15,8 @@
         <tr>
             <th scope="col"> ID</th>
             <th scope="col"> Indeks</th>
-            <th scope="col"> Nazwa</th>
             <th scope="col"> Adres</th>
-            <th scope="col"> Telefon</th>
+            <th scope="col"> Administracja</th>
             <th scope="col"> Szczegóły</th>
         </tr>
         </thead>
@@ -27,10 +26,9 @@
                 <tr>
                 <tr>
                     <td> {{ record.id }} </td>
-                    <td> {{ record.indeks }} </td>
-                    <td> {{ record.nazwa }}</td>
-                    <td> {{ record.adres }} </td>
-                    <td> {{ record.telefon }} </td>
+                    <td> {{ record.symbol_budynku }} </td>
+                    <td> {{ record.adres_budynku }} </td>
+                    <td> {{ record.administracja }} </td>
                     <td><a class="btn btn-outline-primary btn-sm" href="{% url 'sms-view' record.id %}">
                         <i class="fa fa-comment" aria-hidden="true"></i> </a></td>
                 </tr>

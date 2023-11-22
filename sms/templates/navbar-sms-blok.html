@@ -24,12 +24,12 @@
                 </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
-{#                    <form class="d-flex" role="search" method="POST" action="{% url "search-sms" %}">#}
-{#                        {% csrf_token %}#}
-{#                        <input class="form-control me-2" type="search" placeholder="..." aria-label="Search"#}
-{#                               name="searched">#}
-{#                        <button class="btn btn-outline-success" type="submit">Szukaj</button>#}
-{#                    </form>#}
+                    <form class="d-flex" role="search" method="POST" action="{% url "search-sms-blok" %}">
+                        {% csrf_token %}
+                        <input class="form-control me-2" type="search" placeholder="..." aria-label="Search"
+                               name="searched">
+                        <button class="btn btn-outline-success" type="submit">Szukaj</button>
+                    </form>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <li class="nav-item">
                         <a class="btn btn-outline-success" href="{% url 'logout' %}">Wyloguj się &nbsp; <i

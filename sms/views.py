@@ -8,6 +8,7 @@ from .models import Mieszkaniec, Blok
 from smsapi.client import SmsApiPlClient
 from django.core.paginator import Paginator
 from django.http import FileResponse
+from itertools import chain
 import io
 from django.db import connection
 from reportlab.pdfgen import canvas
@@ -175,3 +176,26 @@ def search(request):
                       {"searched": searched, "my_records": my_records})
     else:
         return render(request, "sms-search.html", {})
+
+
+@login_required(login_url="login")
+def search_kontrahent(request):
+    if request.method == "POST":
+        searched = request.POST["searched"]
+        my_records = Mieszkaniec.objects.filter(nazwa__contains=searched) | Mieszkaniec.objects.filter(
+            indeks__contains=searched) | Mieszkaniec.objects.filter(adres__contains=searched)
+        return render(request, "sms-search-kontrahent.html",
+                      {"searched": searched, "my_records": my_records})
+    else:
+        return render(request, "sms-search-kontrahent.html", {})
+
+
+@login_required(login_url="login")
+def search_blok(request):
+    if request.method == "POST":
+        searched = request.POST["searched"]
+        my_record = Blok.objects.filter(adres_budynku__contains=searched) | Blok.objects.filter(symbol_budynku__contains=searched)
+        return render(request, "sms-search-blok.html",
+                      {"searched": searched, "my_records": my_record})
+    else:
+        return render(request, "sms-search-blok.html", {})
