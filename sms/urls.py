@@ -23,7 +23,7 @@ urlpatterns = [
     # path("dashboard_ns_sms_blok", views.dashboard_ns_sms_blok,
     #      name="dashboard-ns-sms-blok"),
     path("view/<int:pk>", views.view_record_sms, name="sms-view"),
-    path("sms/<int:pk>", views.sms_record_sms, name="sms-sms"),
+    path("sms/<int:pk>", views.sms_record, name="sms-sms"),
     path("search", views.search, name="search-sms"),
     path("search_kontrahent", views.search_kontrahent, name="search-sms-kontrahent"),
     path("search_blok", views.search_blok, name="search-sms-blok"),

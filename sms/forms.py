@@ -10,4 +10,8 @@ from django.forms.widgets import PasswordInput, TextInput, FileInput
 class SmsRecordFormSms(forms.ModelForm):
     class Meta:
         model = Mieszkaniec
-        fields = ["indeks", "nazwa", "phone", "content", "telefon", "symbol_budynku"]
+        content = forms.CharField(widget=forms.Textarea,
+                            label="Telefon", max_length=1000)
+        phone = forms.CharField(widget=forms.Textarea,
+                            label="Tekst", max_length=9)
+        fields = ["phone", "content"]

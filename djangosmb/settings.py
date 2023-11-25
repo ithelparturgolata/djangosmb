@@ -1,5 +1,6 @@
 import os.path
 from pathlib import Path
+import django_heroku
 
 
 
@@ -33,10 +34,13 @@ INSTALLED_APPS = [
     "crispy_forms",
     "telefony",
     "sms",
-
+    "crispy_bootstrap4",
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -136,3 +140,5 @@ AUTO_LOGOUT = {
     'REDIRECT_TO_LOGIN_IMMEDIATELY': True,
     'MESSAGE': 'Sesja wygasła. Aby kontynuować, zaloguj się ponownie.',
 }
+
+django_heroku.settings(locals())

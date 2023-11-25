@@ -128,10 +128,12 @@ def view_record_sms(request, pk):
 
 # sms pozew
 @login_required(login_url="login")
-def sms_record_sms(request, pk):
+def sms_record(request,  pk):
     record = Mieszkaniec.objects.get(id=pk)
     form = SmsRecordFormSms(instance=record)
     my_record = Mieszkaniec.objects.get(id=pk)
+
+
 
     if request.method == "POST":
         phone = request.POST.get("phone")
@@ -151,14 +153,10 @@ def sms_record_sms(request, pk):
             send_results = client.sms.send(to=phone,
                                            message=content,
                                            from_="SMBUDOWLANI")
-            my_records = Mieszkaniec.objects.all()
-            p = Paginator(Mieszkaniec.objects.all(), 10)
-            page = request.GET.get("page")
-            my_record = p.get_page(page)
 
-            return render(request, "sms-sms.html",
-                          {"form": form, "record": record,
-                           "my_record": my_record})
+
+            return render(request, "dashboard-sms.html",
+                          {"form": form, "record": record, "my_record": my_record})
 
     context = {"form": form, "record": record, "my_record": my_record}
     return render(request, "sms-sms.html", context=context)
