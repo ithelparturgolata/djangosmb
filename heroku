@@ -1,0 +1,784 @@
+Microsoft Windows [Version 10.0.22631.2715]
+(c) Microsoft Corporation. Wszelkie prawa zastrzeżone.
+
+C:\Windows\System32>cd ..
+
+C:\Windows>cd ..
+
+C:\>cd Users
+
+C:\Users>cd Artur
+
+C:\Users\Artur>cd PycharmProjects
+
+C:\Users\Artur\PycharmProjects>cd djangosmb
+
+C:\Users\Artur\PycharmProjects\djangosmb>heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+Opening browser to https://cli-auth.heroku.com/auth/cli/browser/2cf35ee6-d1aa-46b2-a360-3b7c05535ef3?requestor=SFMyNTY.g2gDbQAAAAs4OS42NC4xMC4yNW4GAKDDNQaMAWIAAVGA.VqR-z73pahxXmy3Xme8xBWWOW5iPEzz_bnNljc6yW7g
+Logging in... done
+Logged in as ithelparturgolata@gmail.com
+
+C:\Users\Artur\PycharmProjects\djangosmb>heroku create panelsm
+Creating ⬢ panelsm... done
+https://panelsm-4554d6dce0e0.herokuapp.com/ | https://git.heroku.com/panelsm.git
+
+C:\Users\Artur\PycharmProjects\djangosmb>pwd
+'pwd' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Artur\PycharmProjects\djangosmb>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Artur\PycharmProjects\djangosmb>git push heroku main
+Enumerating objects: 602, done.
+Counting objects: 100% (602/602), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (173/173), done.
+Writing objects: 100% (602/602), 884.45 KiB | 221.11 MiB/s, done.
+Total 602 (delta 401), reused 602 (delta 401), pack-reused 0
+remote: Resolving deltas: 100% (401/401), done.
+remote: Updated 145 paths from 02b698a
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Building on the Heroku-22 stack
+remote: -----> Determining which buildpack to use for this app
+remote:  !     No default language could be detected for this app.
+remote:                         HINT: This occurs when Heroku cannot detect the buildpack to use for this application automatically.
+remote:                         See https://devcenter.heroku.com/articles/buildpacks
+remote:
+remote:  !     Push failed
+remote: Verifying deploy...
+remote:
+remote: !       Push rejected to panelsm.
+remote:
+To https://git.heroku.com/panelsm.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/panelsm.git'
+
+C:\Users\Artur\PycharmProjects\djangosmb>git push heroku master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://git.heroku.com/panelsm.git'
+
+C:\Users\Artur\PycharmProjects\djangosmb>heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+Opening browser to https://cli-auth.heroku.com/auth/cli/browser/31ecf9b0-1233-4b56-a7ed-0c841c5a6fff?requestor=SFMyNTY.g2gDbQAAAAs4OS42NC4xMC4yNW4GALijjQaMAWIAAVGA.ii-uCzDMXfOofwJiPGlhvLdeCrAi1TbEYjXYfZlUQd0
+Logging in... done
+Logged in as ithelparturgolata@gmail.com
+
+C:\Users\Artur\PycharmProjects\djangosmb>git init
+Reinitialized existing Git repository in C:/Users/Artur/PycharmProjects/djangosmb/.git/
+
+C:\Users\Artur\PycharmProjects\djangosmb>heroku git:remote -a panelsm
+set git remote heroku to https://git.heroku.com/panelsm.git
+
+C:\Users\Artur\PycharmProjects\djangosmb>git add .
+
+C:\Users\Artur\PycharmProjects\djangosmb>git commit -am "make it better"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Artur@DESKTOP-GS5QSLN.(none)')
+
+C:\Users\Artur\PycharmProjects\djangosmb>git config --global user.email "ithelpartugolata@gmail.com"
+
+C:\Users\Artur\PycharmProjects\djangosmb>git config --global user.name "Artur"
+
+C:\Users\Artur\PycharmProjects\djangosmb>git commit -am "make it better"
+[main 2219915] make it better
+ 11 files changed, 69 insertions(+), 23 deletions(-)
+ create mode 100644 .idea/dataSources.xml
+ create mode 100644 Procfile
+ create mode 100644 requirements.txt
+
+C:\Users\Artur\PycharmProjects\djangosmb>git push heroku master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://git.heroku.com/panelsm.git'
+
+C:\Users\Artur\PycharmProjects\djangosmb>git push heroku main
+Enumerating objects: 619, done.
+Counting objects: 100% (619/619), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (189/189), done.
+Writing objects: 100% (619/619), 888.91 KiB | 16.16 MiB/s, done.
+Total 619 (delta 412), reused 594 (delta 401), pack-reused 0
+remote: Resolving deltas: 100% (412/412), done.
+remote: Updated 148 paths from 15f8634
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Building on the Heroku-22 stack
+remote: -----> Determining which buildpack to use for this app
+remote: -----> Python app detected
+remote: -----> No Python version was specified. Using the buildpack default: python-3.11.6
+remote:        To use a different version, see: https://devcenter.heroku.com/articles/python-runtimes
+remote: -----> Installing python-3.11.6
+remote: -----> Installing pip 23.3.1, setuptools 68.0.0 and wheel 0.41.3
+remote: -----> Installing SQLite3
+remote: -----> Installing requirements with pip
+remote:        Collecting asgiref==3.7.2 (from -r requirements.txt (line 1))
+remote:          Downloading asgiref-3.7.2-py3-none-any.whl.metadata (9.2 kB)
+remote:        Collecting certifi==2023.11.17 (from -r requirements.txt (line 2))
+remote:          Downloading certifi-2023.11.17-py3-none-any.whl.metadata (2.2 kB)
+remote:        Collecting charset-normalizer==3.3.2 (from -r requirements.txt (line 3))
+remote:          Downloading charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (33 kB)
+remote:        Collecting cloudinary==1.36.0 (from -r requirements.txt (line 4))
+remote:          Downloading cloudinary-1.36.0.tar.gz (174 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting crispy-bootstrap4==2023.1 (from -r requirements.txt (line 5))
+remote:          Downloading crispy_bootstrap4-2023.1-py3-none-any.whl.metadata (2.3 kB)
+remote:        Collecting dj-database-url==2.1.0 (from -r requirements.txt (line 6))
+remote:          Downloading dj_database_url-2.1.0-py3-none-any.whl.metadata (11 kB)
+remote:        Collecting Django==4.2.7 (from -r requirements.txt (line 7))
+remote:          Downloading Django-4.2.7-py3-none-any.whl.metadata (4.1 kB)
+remote:        Collecting django-auto-logout==0.5.1 (from -r requirements.txt (line 8))
+remote:          Downloading django_auto_logout-0.5.1-py3-none-any.whl (6.4 kB)
+remote:        Collecting django-ckeditor-5==0.2.10 (from -r requirements.txt (line 9))
+remote:          Downloading django_ckeditor_5-0.2.10-py3-none-any.whl.metadata (10 kB)
+remote:        Collecting django-crispy-forms==2.1 (from -r requirements.txt (line 10))
+remote:          Downloading django_crispy_forms-2.1-py3-none-any.whl.metadata (5.0 kB)
+remote:        Collecting django-heroku==0.3.1 (from -r requirements.txt (line 11))
+remote:          Downloading django_heroku-0.3.1-py2.py3-none-any.whl (6.2 kB)
+remote:        Collecting django-js-asset==2.1.0 (from -r requirements.txt (line 12))
+remote:          Downloading django_js_asset-2.1.0-py3-none-any.whl.metadata (3.4 kB)
+remote:        Collecting gunicorn==21.2.0 (from -r requirements.txt (line 13))
+remote:          Downloading gunicorn-21.2.0-py3-none-any.whl.metadata (4.1 kB)
+remote:        Collecting idna==3.4 (from -r requirements.txt (line 14))
+remote:          Downloading idna-3.4-py3-none-any.whl (61 kB)
+remote:        Collecting packaging==23.2 (from -r requirements.txt (line 15))
+remote:          Downloading packaging-23.2-py3-none-any.whl.metadata (3.2 kB)
+remote:        Collecting page==0.2 (from -r requirements.txt (line 16))
+remote:          Downloading page-0.2.tar.gz (25 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting pep8==1.7.1 (from -r requirements.txt (line 17))
+remote:          Downloading pep8-1.7.1-py2.py3-none-any.whl (41 kB)
+remote:        Collecting Pillow==10.1.0 (from -r requirements.txt (line 18))
+remote:          Downloading Pillow-10.1.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (9.5 kB)
+remote:        Collecting psycopg2==2.9.9 (from -r requirements.txt (line 19))
+remote:          Downloading psycopg2-2.9.9.tar.gz (384 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting reportlab==4.0.7 (from -r requirements.txt (line 20))
+remote:          Downloading reportlab-4.0.7-py3-none-any.whl.metadata (1.3 kB)
+remote:        Collecting requests==2.31.0 (from -r requirements.txt (line 21))
+remote:          Downloading requests-2.31.0-py3-none-any.whl.metadata (4.6 kB)
+remote:        Collecting six==1.16.0 (from -r requirements.txt (line 22))
+remote:          Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+remote:        Collecting smsapi-client==2.9.2 (from -r requirements.txt (line 23))
+remote:          Downloading smsapi_client-2.9.2-py2.py3-none-any.whl.metadata (2.5 kB)
+remote:        Collecting sqlparse==0.4.4 (from -r requirements.txt (line 24))
+remote:          Downloading sqlparse-0.4.4-py3-none-any.whl (41 kB)
+remote:        Collecting typing_extensions==4.8.0 (from -r requirements.txt (line 25))
+remote:          Downloading typing_extensions-4.8.0-py3-none-any.whl.metadata (3.0 kB)
+remote:        Collecting tzdata==2023.3 (from -r requirements.txt (line 26))
+remote:          Downloading tzdata-2023.3-py2.py3-none-any.whl (341 kB)
+remote:        Collecting urllib3==2.1.0 (from -r requirements.txt (line 27))
+remote:          Downloading urllib3-2.1.0-py3-none-any.whl.metadata (6.4 kB)
+remote:        Collecting whitenoise==6.6.0 (from -r requirements.txt (line 28))
+remote:          Downloading whitenoise-6.6.0-py3-none-any.whl.metadata (3.7 kB)
+remote:        Downloading asgiref-3.7.2-py3-none-any.whl (24 kB)
+remote:        Downloading certifi-2023.11.17-py3-none-any.whl (162 kB)
+remote:        Downloading charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (140 kB)
+remote:        Downloading crispy_bootstrap4-2023.1-py3-none-any.whl (22 kB)
+remote:        Downloading dj_database_url-2.1.0-py3-none-any.whl (7.7 kB)
+remote:        Downloading Django-4.2.7-py3-none-any.whl (8.0 MB)
+remote:        Downloading django_ckeditor_5-0.2.10-py3-none-any.whl (2.0 MB)
+remote:        Downloading django_crispy_forms-2.1-py3-none-any.whl (31 kB)
+remote:        Downloading django_js_asset-2.1.0-py3-none-any.whl (4.7 kB)
+remote:        Downloading gunicorn-21.2.0-py3-none-any.whl (80 kB)
+remote:        Downloading packaging-23.2-py3-none-any.whl (53 kB)
+remote:        Downloading Pillow-10.1.0-cp311-cp311-manylinux_2_28_x86_64.whl (3.6 MB)
+remote:        Downloading reportlab-4.0.7-py3-none-any.whl (1.9 MB)
+remote:        Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+remote:        Downloading smsapi_client-2.9.2-py2.py3-none-any.whl (21 kB)
+remote:        Downloading typing_extensions-4.8.0-py3-none-any.whl (31 kB)
+remote:        Downloading urllib3-2.1.0-py3-none-any.whl (104 kB)
+remote:        Downloading whitenoise-6.6.0-py3-none-any.whl (19 kB)
+remote:        Building wheels for collected packages: cloudinary, page, psycopg2
+remote:          Building wheel for cloudinary (setup.py): started
+remote:          Building wheel for cloudinary (setup.py): finished with status 'done'
+remote:          Created wheel for cloudinary: filename=cloudinary-1.36.0-py3-none-any.whl size=138826 sha256=43ab11607b37e288312b3297f325b6aecf9c94566ac219c5ca458cad25d7ef09
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-f7p2jmfm/wheels/c3/93/e6/4337704771b9890f4b4f1d27a3bbfd49684223769b40e70993
+remote:          Building wheel for page (setup.py): started
+remote:          Building wheel for page (setup.py): finished with status 'done'
+remote:          Created wheel for page: filename=page-0.2-py3-none-any.whl size=31115 sha256=b559e1d207dc5470542f0855b62a615db890f0661c3472d69cc0fce97b7654ba
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-f7p2jmfm/wheels/06/28/9e/d80e74481cbf0971dfd472e3d159a072e1da64cf03c18bc5de
+remote:          Building wheel for psycopg2 (setup.py): started
+remote:          Building wheel for psycopg2 (setup.py): finished with status 'done'
+remote:          Created wheel for psycopg2: filename=psycopg2-2.9.9-cp311-cp311-linux_x86_64.whl size=159957 sha256=57f0487969fb6b8492e5a9e5588e76367dbea0808c9a3e11e7849ffed021eeb7
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-f7p2jmfm/wheels/ab/34/b9/78ebef1b3220b4840ee482461e738566c3c9165d2b5c914f51
+remote:        Successfully built cloudinary page psycopg2
+remote:        Installing collected packages: pep8, page, django-auto-logout, whitenoise, urllib3, tzdata, typing_extensions, sqlparse, six, psycopg2, Pillow, packaging, idna, charset-normalizer, certifi, asgiref, requests, reportlab, gunicorn, Django, cloudinary, smsapi-client, django-js-asset, django-crispy-forms, django-ckeditor-5, dj-database-url, django-heroku, crispy-bootstrap4
+remote:        Successfully installed Django-4.2.7 Pillow-10.1.0 asgiref-3.7.2 certifi-2023.11.17 charset-normalizer-3.3.2 cloudinary-1.36.0 crispy-bootstrap4-2023.1 dj-database-url-2.1.0 django-auto-logout-0.5.1 django-ckeditor-5-0.2.10 django-crispy-forms-2.1 django-heroku-0.3.1 django-js-asset-2.1.0 gunicorn-21.2.0 idna-3.4 packaging-23.2 page-0.2 pep8-1.7.1 psycopg2-2.9.9 reportlab-4.0.7 requests-2.31.0 six-1.16.0 smsapi-client-2.9.2 sqlparse-0.4.4 typing_extensions-4.8.0 tzdata-2023.3 urllib3-2.1.0 whitenoise-6.6.0
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        Post-processing 'js/popper.min.js' failed!
+remote:        Traceback (most recent call last):
+remote:          File "/tmp/build_dc5e3f7b/manage.py", line 22, in <module>
+remote:            main()
+remote:          File "/tmp/build_dc5e3f7b/manage.py", line 18, in main
+remote:            execute_from_command_line(sys.argv)
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+remote:            utility.execute()
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 436, in execute
+remote:            self.fetch_command(subcommand).run_from_argv(self.argv)
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/base.py", line 412, in run_from_argv
+remote:            self.execute(*args, **cmd_options)
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/base.py", line 458, in execute
+remote:            output = self.handle(*args, **options)
+remote:                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 209, in handle
+remote:            collected = self.collect()
+remote:                        ^^^^^^^^^^^^^^
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 154, in collect
+remote:            raise processed
+remote:        whitenoise.storage.MissingFileError: The file 'js/popper.min.js.map' could not be found with <whitenoise.storage.CompressedManifestStaticFilesStorage object at 0x7f055aacc9d0>.
+remote:        The JS file 'js/popper.min.js' references a file which could not be found:
+remote:          js/popper.min.js.map
+remote:        Please check the URL references in this JS file, particularly any
+remote:        relative paths which might be pointing to the wrong location.
+remote:
+remote:  !     Error while running '$ python manage.py collectstatic --noinput'.
+remote:        See traceback above for details.
+remote:
+remote:        You may need to update application code to resolve this error.
+remote:        Or, you can disable collectstatic for this application:
+remote:
+remote:           $ heroku config:set DISABLE_COLLECTSTATIC=1
+remote:
+remote:        https://devcenter.heroku.com/articles/django-assets
+remote:  !     Push rejected, failed to compile Python app.
+remote:
+remote:  !     Push failed
+remote: Verifying deploy...
+remote:
+remote: !       Push rejected to panelsm.
+remote:
+To https://git.heroku.com/panelsm.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/panelsm.git'
+
+C:\Users\Artur\PycharmProjects\djangosmb>git checkout -b main
+fatal: a branch named 'main' already exists
+
+C:\Users\Artur\PycharmProjects\djangosmb>git branch -D master
+error: branch 'master' not found.
+
+C:\Users\Artur\PycharmProjects\djangosmb>git push heroku main
+Enumerating objects: 619, done.
+Counting objects: 100% (619/619), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (189/189), done.
+Writing objects: 100% (619/619), 888.91 KiB | 16.46 MiB/s, done.
+Total 619 (delta 412), reused 594 (delta 401), pack-reused 0
+remote: Resolving deltas: 100% (412/412), done.
+remote: Updated 148 paths from 15f8634
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Building on the Heroku-22 stack
+remote: -----> Determining which buildpack to use for this app
+remote: -----> Python app detected
+remote: -----> No Python version was specified. Using the buildpack default: python-3.11.6
+remote:        To use a different version, see: https://devcenter.heroku.com/articles/python-runtimes
+remote: -----> Installing python-3.11.6
+remote: -----> Installing pip 23.3.1, setuptools 68.0.0 and wheel 0.41.3
+remote: -----> Installing SQLite3
+remote: -----> Installing requirements with pip
+remote:        Collecting asgiref==3.7.2 (from -r requirements.txt (line 1))
+remote:          Downloading asgiref-3.7.2-py3-none-any.whl.metadata (9.2 kB)
+remote:        Collecting certifi==2023.11.17 (from -r requirements.txt (line 2))
+remote:          Downloading certifi-2023.11.17-py3-none-any.whl.metadata (2.2 kB)
+remote:        Collecting charset-normalizer==3.3.2 (from -r requirements.txt (line 3))
+remote:          Downloading charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (33 kB)
+remote:        Collecting cloudinary==1.36.0 (from -r requirements.txt (line 4))
+remote:          Downloading cloudinary-1.36.0.tar.gz (174 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting crispy-bootstrap4==2023.1 (from -r requirements.txt (line 5))
+remote:          Downloading crispy_bootstrap4-2023.1-py3-none-any.whl.metadata (2.3 kB)
+remote:        Collecting dj-database-url==2.1.0 (from -r requirements.txt (line 6))
+remote:          Downloading dj_database_url-2.1.0-py3-none-any.whl.metadata (11 kB)
+remote:        Collecting Django==4.2.7 (from -r requirements.txt (line 7))
+remote:          Downloading Django-4.2.7-py3-none-any.whl.metadata (4.1 kB)
+remote:        Collecting django-auto-logout==0.5.1 (from -r requirements.txt (line 8))
+remote:          Downloading django_auto_logout-0.5.1-py3-none-any.whl (6.4 kB)
+remote:        Collecting django-ckeditor-5==0.2.10 (from -r requirements.txt (line 9))
+remote:          Downloading django_ckeditor_5-0.2.10-py3-none-any.whl.metadata (10 kB)
+remote:        Collecting django-crispy-forms==2.1 (from -r requirements.txt (line 10))
+remote:          Downloading django_crispy_forms-2.1-py3-none-any.whl.metadata (5.0 kB)
+remote:        Collecting django-heroku==0.3.1 (from -r requirements.txt (line 11))
+remote:          Downloading django_heroku-0.3.1-py2.py3-none-any.whl (6.2 kB)
+remote:        Collecting django-js-asset==2.1.0 (from -r requirements.txt (line 12))
+remote:          Downloading django_js_asset-2.1.0-py3-none-any.whl.metadata (3.4 kB)
+remote:        Collecting gunicorn==21.2.0 (from -r requirements.txt (line 13))
+remote:          Downloading gunicorn-21.2.0-py3-none-any.whl.metadata (4.1 kB)
+remote:        Collecting idna==3.4 (from -r requirements.txt (line 14))
+remote:          Downloading idna-3.4-py3-none-any.whl (61 kB)
+remote:        Collecting packaging==23.2 (from -r requirements.txt (line 15))
+remote:          Downloading packaging-23.2-py3-none-any.whl.metadata (3.2 kB)
+remote:        Collecting page==0.2 (from -r requirements.txt (line 16))
+remote:          Downloading page-0.2.tar.gz (25 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting pep8==1.7.1 (from -r requirements.txt (line 17))
+remote:          Downloading pep8-1.7.1-py2.py3-none-any.whl (41 kB)
+remote:        Collecting Pillow==10.1.0 (from -r requirements.txt (line 18))
+remote:          Downloading Pillow-10.1.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (9.5 kB)
+remote:        Collecting psycopg2==2.9.9 (from -r requirements.txt (line 19))
+remote:          Downloading psycopg2-2.9.9.tar.gz (384 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting reportlab==4.0.7 (from -r requirements.txt (line 20))
+remote:          Downloading reportlab-4.0.7-py3-none-any.whl.metadata (1.3 kB)
+remote:        Collecting requests==2.31.0 (from -r requirements.txt (line 21))
+remote:          Downloading requests-2.31.0-py3-none-any.whl.metadata (4.6 kB)
+remote:        Collecting six==1.16.0 (from -r requirements.txt (line 22))
+remote:          Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+remote:        Collecting smsapi-client==2.9.2 (from -r requirements.txt (line 23))
+remote:          Downloading smsapi_client-2.9.2-py2.py3-none-any.whl.metadata (2.5 kB)
+remote:        Collecting sqlparse==0.4.4 (from -r requirements.txt (line 24))
+remote:          Downloading sqlparse-0.4.4-py3-none-any.whl (41 kB)
+remote:        Collecting typing_extensions==4.8.0 (from -r requirements.txt (line 25))
+remote:          Downloading typing_extensions-4.8.0-py3-none-any.whl.metadata (3.0 kB)
+remote:        Collecting tzdata==2023.3 (from -r requirements.txt (line 26))
+remote:          Downloading tzdata-2023.3-py2.py3-none-any.whl (341 kB)
+remote:        Collecting urllib3==2.1.0 (from -r requirements.txt (line 27))
+remote:          Downloading urllib3-2.1.0-py3-none-any.whl.metadata (6.4 kB)
+remote:        Collecting whitenoise==6.6.0 (from -r requirements.txt (line 28))
+remote:          Downloading whitenoise-6.6.0-py3-none-any.whl.metadata (3.7 kB)
+remote:        Downloading asgiref-3.7.2-py3-none-any.whl (24 kB)
+remote:        Downloading certifi-2023.11.17-py3-none-any.whl (162 kB)
+remote:        Downloading charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (140 kB)
+remote:        Downloading crispy_bootstrap4-2023.1-py3-none-any.whl (22 kB)
+remote:        Downloading dj_database_url-2.1.0-py3-none-any.whl (7.7 kB)
+remote:        Downloading Django-4.2.7-py3-none-any.whl (8.0 MB)
+remote:        Downloading django_ckeditor_5-0.2.10-py3-none-any.whl (2.0 MB)
+remote:        Downloading django_crispy_forms-2.1-py3-none-any.whl (31 kB)
+remote:        Downloading django_js_asset-2.1.0-py3-none-any.whl (4.7 kB)
+remote:        Downloading gunicorn-21.2.0-py3-none-any.whl (80 kB)
+remote:        Downloading packaging-23.2-py3-none-any.whl (53 kB)
+remote:        Downloading Pillow-10.1.0-cp311-cp311-manylinux_2_28_x86_64.whl (3.6 MB)
+remote:        Downloading reportlab-4.0.7-py3-none-any.whl (1.9 MB)
+remote:        Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+remote:        Downloading smsapi_client-2.9.2-py2.py3-none-any.whl (21 kB)
+remote:        Downloading typing_extensions-4.8.0-py3-none-any.whl (31 kB)
+remote:        Downloading urllib3-2.1.0-py3-none-any.whl (104 kB)
+remote:        Downloading whitenoise-6.6.0-py3-none-any.whl (19 kB)
+remote:        Building wheels for collected packages: cloudinary, page, psycopg2
+remote:          Building wheel for cloudinary (setup.py): started
+remote:          Building wheel for cloudinary (setup.py): finished with status 'done'
+remote:          Created wheel for cloudinary: filename=cloudinary-1.36.0-py3-none-any.whl size=138826 sha256=f5f5142b9d658c5818c24f68870c57992ec794e73af7c2885864c7c3d22b99e1
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-y339dxbf/wheels/c3/93/e6/4337704771b9890f4b4f1d27a3bbfd49684223769b40e70993
+remote:          Building wheel for page (setup.py): started
+remote:          Building wheel for page (setup.py): finished with status 'done'
+remote:          Created wheel for page: filename=page-0.2-py3-none-any.whl size=31115 sha256=47252da3f21dfcfa12f3784057bf888d2a55ec1f764eba200018eab656bb74fa
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-y339dxbf/wheels/06/28/9e/d80e74481cbf0971dfd472e3d159a072e1da64cf03c18bc5de
+remote:          Building wheel for psycopg2 (setup.py): started
+remote:          Building wheel for psycopg2 (setup.py): finished with status 'done'
+remote:          Created wheel for psycopg2: filename=psycopg2-2.9.9-cp311-cp311-linux_x86_64.whl size=159957 sha256=219c8d80fb3dd1c5c849abc222ad55fff23e60cc64577c2961a711045dcd71dc
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-y339dxbf/wheels/ab/34/b9/78ebef1b3220b4840ee482461e738566c3c9165d2b5c914f51
+remote:        Successfully built cloudinary page psycopg2
+remote:        Installing collected packages: pep8, page, django-auto-logout, whitenoise, urllib3, tzdata, typing_extensions, sqlparse, six, psycopg2, Pillow, packaging, idna, charset-normalizer, certifi, asgiref, requests, reportlab, gunicorn, Django, cloudinary, smsapi-client, django-js-asset, django-crispy-forms, django-ckeditor-5, dj-database-url, django-heroku, crispy-bootstrap4
+remote:        Successfully installed Django-4.2.7 Pillow-10.1.0 asgiref-3.7.2 certifi-2023.11.17 charset-normalizer-3.3.2 cloudinary-1.36.0 crispy-bootstrap4-2023.1 dj-database-url-2.1.0 django-auto-logout-0.5.1 django-ckeditor-5-0.2.10 django-crispy-forms-2.1 django-heroku-0.3.1 django-js-asset-2.1.0 gunicorn-21.2.0 idna-3.4 packaging-23.2 page-0.2 pep8-1.7.1 psycopg2-2.9.9 reportlab-4.0.7 requests-2.31.0 six-1.16.0 smsapi-client-2.9.2 sqlparse-0.4.4 typing_extensions-4.8.0 tzdata-2023.3 urllib3-2.1.0 whitenoise-6.6.0
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        Post-processing 'js/popper.min.js' failed!
+remote:        Traceback (most recent call last):
+remote:          File "/tmp/build_3646dc93/manage.py", line 22, in <module>
+remote:            main()
+remote:          File "/tmp/build_3646dc93/manage.py", line 18, in main
+remote:            execute_from_command_line(sys.argv)
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+remote:            utility.execute()
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 436, in execute
+remote:            self.fetch_command(subcommand).run_from_argv(self.argv)
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/base.py", line 412, in run_from_argv
+remote:            self.execute(*args, **cmd_options)
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/base.py", line 458, in execute
+remote:            output = self.handle(*args, **options)
+remote:                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 209, in handle
+remote:            collected = self.collect()
+remote:                        ^^^^^^^^^^^^^^
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 154, in collect
+remote:            raise processed
+remote:        whitenoise.storage.MissingFileError: The file 'js/popper.min.js.map' could not be found with <whitenoise.storage.CompressedManifestStaticFilesStorage object at 0x7f3a2779cd90>.
+remote:        The JS file 'js/popper.min.js' references a file which could not be found:
+remote:          js/popper.min.js.map
+remote:        Please check the URL references in this JS file, particularly any
+remote:        relative paths which might be pointing to the wrong location.
+remote:
+remote:  !     Error while running '$ python manage.py collectstatic --noinput'.
+remote:        See traceback above for details.
+remote:
+remote:        You may need to update application code to resolve this error.
+remote:        Or, you can disable collectstatic for this application:
+remote:
+remote:           $ heroku config:set DISABLE_COLLECTSTATIC=1
+remote:
+remote:        https://devcenter.heroku.com/articles/django-assets
+remote:  !     Push rejected, failed to compile Python app.
+remote:
+remote:  !     Push failed
+remote:  !
+remote:  ! ## Warning - The same version of this code has already been built: 22199151f9786d08915fe687ab9f5e719716d271
+remote:  !
+remote:  ! We have detected that you have triggered a build from source code with version 22199151f9786d08915fe687ab9f5e719716d271
+remote:  ! at least twice. One common cause of this behavior is attempting to deploy code from a different branch.
+remote:  !
+remote:  ! If you are developing on a branch and deploying via git you must run:
+remote:  !
+remote:  !     git push heroku <branchname>:main
+remote:  !
+remote:  ! This article goes into details on the behavior:
+remote:  !   https://devcenter.heroku.com/articles/duplicate-build-version
+remote:
+remote: Verifying deploy...
+remote:
+remote: !       Push rejected to panelsm.
+remote:
+To https://git.heroku.com/panelsm.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/panelsm.git'
+
+C:\Users\Artur\PycharmProjects\djangosmb>heroku git:remote -a panelsm
+set git remote heroku to https://git.heroku.com/panelsm.git
+
+C:\Users\Artur\PycharmProjects\djangosmb>git push heroku main
+Enumerating objects: 619, done.
+Counting objects: 100% (619/619), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (189/189), done.
+Writing objects: 100% (619/619), 888.91 KiB | 16.46 MiB/s, done.
+Total 619 (delta 412), reused 594 (delta 401), pack-reused 0
+remote: Resolving deltas: 100% (412/412), done.
+remote: Updated 148 paths from 15f8634
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Building on the Heroku-22 stack
+remote: -----> Determining which buildpack to use for this app
+remote: -----> Python app detected
+remote: -----> No Python version was specified. Using the buildpack default: python-3.11.6
+remote:        To use a different version, see: https://devcenter.heroku.com/articles/python-runtimes
+remote: -----> Installing python-3.11.6
+remote: -----> Installing pip 23.3.1, setuptools 68.0.0 and wheel 0.41.3
+remote: -----> Installing SQLite3
+remote: -----> Installing requirements with pip
+remote:        Collecting asgiref==3.7.2 (from -r requirements.txt (line 1))
+remote:          Downloading asgiref-3.7.2-py3-none-any.whl.metadata (9.2 kB)
+remote:        Collecting certifi==2023.11.17 (from -r requirements.txt (line 2))
+remote:          Downloading certifi-2023.11.17-py3-none-any.whl.metadata (2.2 kB)
+remote:        Collecting charset-normalizer==3.3.2 (from -r requirements.txt (line 3))
+remote:          Downloading charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (33 kB)
+remote:        Collecting cloudinary==1.36.0 (from -r requirements.txt (line 4))
+remote:          Downloading cloudinary-1.36.0.tar.gz (174 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting crispy-bootstrap4==2023.1 (from -r requirements.txt (line 5))
+remote:          Downloading crispy_bootstrap4-2023.1-py3-none-any.whl.metadata (2.3 kB)
+remote:        Collecting dj-database-url==2.1.0 (from -r requirements.txt (line 6))
+remote:          Downloading dj_database_url-2.1.0-py3-none-any.whl.metadata (11 kB)
+remote:        Collecting Django==4.2.7 (from -r requirements.txt (line 7))
+remote:          Downloading Django-4.2.7-py3-none-any.whl.metadata (4.1 kB)
+remote:        Collecting django-auto-logout==0.5.1 (from -r requirements.txt (line 8))
+remote:          Downloading django_auto_logout-0.5.1-py3-none-any.whl (6.4 kB)
+remote:        Collecting django-ckeditor-5==0.2.10 (from -r requirements.txt (line 9))
+remote:          Downloading django_ckeditor_5-0.2.10-py3-none-any.whl.metadata (10 kB)
+remote:        Collecting django-crispy-forms==2.1 (from -r requirements.txt (line 10))
+remote:          Downloading django_crispy_forms-2.1-py3-none-any.whl.metadata (5.0 kB)
+remote:        Collecting django-heroku==0.3.1 (from -r requirements.txt (line 11))
+remote:          Downloading django_heroku-0.3.1-py2.py3-none-any.whl (6.2 kB)
+remote:        Collecting django-js-asset==2.1.0 (from -r requirements.txt (line 12))
+remote:          Downloading django_js_asset-2.1.0-py3-none-any.whl.metadata (3.4 kB)
+remote:        Collecting gunicorn==21.2.0 (from -r requirements.txt (line 13))
+remote:          Downloading gunicorn-21.2.0-py3-none-any.whl.metadata (4.1 kB)
+remote:        Collecting idna==3.4 (from -r requirements.txt (line 14))
+remote:          Downloading idna-3.4-py3-none-any.whl (61 kB)
+remote:        Collecting packaging==23.2 (from -r requirements.txt (line 15))
+remote:          Downloading packaging-23.2-py3-none-any.whl.metadata (3.2 kB)
+remote:        Collecting page==0.2 (from -r requirements.txt (line 16))
+remote:          Downloading page-0.2.tar.gz (25 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting pep8==1.7.1 (from -r requirements.txt (line 17))
+remote:          Downloading pep8-1.7.1-py2.py3-none-any.whl (41 kB)
+remote:        Collecting Pillow==10.1.0 (from -r requirements.txt (line 18))
+remote:          Downloading Pillow-10.1.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (9.5 kB)
+remote:        Collecting psycopg2==2.9.9 (from -r requirements.txt (line 19))
+remote:          Downloading psycopg2-2.9.9.tar.gz (384 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting reportlab==4.0.7 (from -r requirements.txt (line 20))
+remote:          Downloading reportlab-4.0.7-py3-none-any.whl.metadata (1.3 kB)
+remote:        Collecting requests==2.31.0 (from -r requirements.txt (line 21))
+remote:          Downloading requests-2.31.0-py3-none-any.whl.metadata (4.6 kB)
+remote:        Collecting six==1.16.0 (from -r requirements.txt (line 22))
+remote:          Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+remote:        Collecting smsapi-client==2.9.2 (from -r requirements.txt (line 23))
+remote:          Downloading smsapi_client-2.9.2-py2.py3-none-any.whl.metadata (2.5 kB)
+remote:        Collecting sqlparse==0.4.4 (from -r requirements.txt (line 24))
+remote:          Downloading sqlparse-0.4.4-py3-none-any.whl (41 kB)
+remote:        Collecting typing_extensions==4.8.0 (from -r requirements.txt (line 25))
+remote:          Downloading typing_extensions-4.8.0-py3-none-any.whl.metadata (3.0 kB)
+remote:        Collecting tzdata==2023.3 (from -r requirements.txt (line 26))
+remote:          Downloading tzdata-2023.3-py2.py3-none-any.whl (341 kB)
+remote:        Collecting urllib3==2.1.0 (from -r requirements.txt (line 27))
+remote:          Downloading urllib3-2.1.0-py3-none-any.whl.metadata (6.4 kB)
+remote:        Collecting whitenoise==6.6.0 (from -r requirements.txt (line 28))
+remote:          Downloading whitenoise-6.6.0-py3-none-any.whl.metadata (3.7 kB)
+remote:        Downloading asgiref-3.7.2-py3-none-any.whl (24 kB)
+remote:        Downloading certifi-2023.11.17-py3-none-any.whl (162 kB)
+remote:        Downloading charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (140 kB)
+remote:        Downloading crispy_bootstrap4-2023.1-py3-none-any.whl (22 kB)
+remote:        Downloading dj_database_url-2.1.0-py3-none-any.whl (7.7 kB)
+remote:        Downloading Django-4.2.7-py3-none-any.whl (8.0 MB)
+remote:        Downloading django_ckeditor_5-0.2.10-py3-none-any.whl (2.0 MB)
+remote:        Downloading django_crispy_forms-2.1-py3-none-any.whl (31 kB)
+remote:        Downloading django_js_asset-2.1.0-py3-none-any.whl (4.7 kB)
+remote:        Downloading gunicorn-21.2.0-py3-none-any.whl (80 kB)
+remote:        Downloading packaging-23.2-py3-none-any.whl (53 kB)
+remote:        Downloading Pillow-10.1.0-cp311-cp311-manylinux_2_28_x86_64.whl (3.6 MB)
+remote:        Downloading reportlab-4.0.7-py3-none-any.whl (1.9 MB)
+remote:        Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+remote:        Downloading smsapi_client-2.9.2-py2.py3-none-any.whl (21 kB)
+remote:        Downloading typing_extensions-4.8.0-py3-none-any.whl (31 kB)
+remote:        Downloading urllib3-2.1.0-py3-none-any.whl (104 kB)
+remote:        Downloading whitenoise-6.6.0-py3-none-any.whl (19 kB)
+remote:        Building wheels for collected packages: cloudinary, page, psycopg2
+remote:          Building wheel for cloudinary (setup.py): started
+remote:          Building wheel for cloudinary (setup.py): finished with status 'done'
+remote:          Created wheel for cloudinary: filename=cloudinary-1.36.0-py3-none-any.whl size=138826 sha256=de1c11e38f9808183231ad797c8edd90a312f78880bcf039674002d44fb177ab
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-lekdwnvd/wheels/c3/93/e6/4337704771b9890f4b4f1d27a3bbfd49684223769b40e70993
+remote:          Building wheel for page (setup.py): started
+remote:          Building wheel for page (setup.py): finished with status 'done'
+remote:          Created wheel for page: filename=page-0.2-py3-none-any.whl size=31115 sha256=73364a0124944ea8745174e7357490882934133a966830712ad074369c51e4bf
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-lekdwnvd/wheels/06/28/9e/d80e74481cbf0971dfd472e3d159a072e1da64cf03c18bc5de
+remote:          Building wheel for psycopg2 (setup.py): started
+remote:          Building wheel for psycopg2 (setup.py): finished with status 'done'
+remote:          Created wheel for psycopg2: filename=psycopg2-2.9.9-cp311-cp311-linux_x86_64.whl size=159957 sha256=ecf37f865da943abb0360656c5760175f50133fe1e447aa833974a6910d6ab2d
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-lekdwnvd/wheels/ab/34/b9/78ebef1b3220b4840ee482461e738566c3c9165d2b5c914f51
+remote:        Successfully built cloudinary page psycopg2
+remote:        Installing collected packages: pep8, page, django-auto-logout, whitenoise, urllib3, tzdata, typing_extensions, sqlparse, six, psycopg2, Pillow, packaging, idna, charset-normalizer, certifi, asgiref, requests, reportlab, gunicorn, Django, cloudinary, smsapi-client, django-js-asset, django-crispy-forms, django-ckeditor-5, dj-database-url, django-heroku, crispy-bootstrap4
+remote:        Successfully installed Django-4.2.7 Pillow-10.1.0 asgiref-3.7.2 certifi-2023.11.17 charset-normalizer-3.3.2 cloudinary-1.36.0 crispy-bootstrap4-2023.1 dj-database-url-2.1.0 django-auto-logout-0.5.1 django-ckeditor-5-0.2.10 django-crispy-forms-2.1 django-heroku-0.3.1 django-js-asset-2.1.0 gunicorn-21.2.0 idna-3.4 packaging-23.2 page-0.2 pep8-1.7.1 psycopg2-2.9.9 reportlab-4.0.7 requests-2.31.0 six-1.16.0 smsapi-client-2.9.2 sqlparse-0.4.4 typing_extensions-4.8.0 tzdata-2023.3 urllib3-2.1.0 whitenoise-6.6.0
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        Post-processing 'js/popper.min.js' failed!
+remote:        Traceback (most recent call last):
+remote:          File "/tmp/build_76c751d9/manage.py", line 22, in <module>
+remote:            main()
+remote:          File "/tmp/build_76c751d9/manage.py", line 18, in main
+remote:            execute_from_command_line(sys.argv)
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+remote:            utility.execute()
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 436, in execute
+remote:            self.fetch_command(subcommand).run_from_argv(self.argv)
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/base.py", line 412, in run_from_argv
+remote:            self.execute(*args, **cmd_options)
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/base.py", line 458, in execute
+remote:            output = self.handle(*args, **options)
+remote:                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 209, in handle
+remote:            collected = self.collect()
+remote:                        ^^^^^^^^^^^^^^
+remote:          File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 154, in collect
+remote:            raise processed
+remote:        whitenoise.storage.MissingFileError: The file 'js/popper.min.js.map' could not be found with <whitenoise.storage.CompressedManifestStaticFilesStorage object at 0x7fd10aa949d0>.
+remote:        The JS file 'js/popper.min.js' references a file which could not be found:
+remote:          js/popper.min.js.map
+remote:        Please check the URL references in this JS file, particularly any
+remote:        relative paths which might be pointing to the wrong location.
+remote:
+remote:  !     Error while running '$ python manage.py collectstatic --noinput'.
+remote:        See traceback above for details.
+remote:
+remote:        You may need to update application code to resolve this error.
+remote:        Or, you can disable collectstatic for this application:
+remote:
+remote:           $ heroku config:set DISABLE_COLLECTSTATIC=1
+remote:
+remote:        https://devcenter.heroku.com/articles/django-assets
+remote:  !     Push rejected, failed to compile Python app.
+remote:
+remote:  !     Push failed
+remote:  !
+remote:  ! ## Warning - The same version of this code has already been built: 22199151f9786d08915fe687ab9f5e719716d271
+remote:  !
+remote:  ! We have detected that you have triggered a build from source code with version 22199151f9786d08915fe687ab9f5e719716d271
+remote:  ! at least twice. One common cause of this behavior is attempting to deploy code from a different branch.
+remote:  !
+remote:  ! If you are developing on a branch and deploying via git you must run:
+remote:  !
+remote:  !     git push heroku <branchname>:main
+remote:  !
+remote:  ! This article goes into details on the behavior:
+remote:  !   https://devcenter.heroku.com/articles/duplicate-build-version
+remote:
+remote: Verifying deploy...
+remote:
+remote: !       Push rejected to panelsm.
+remote:
+To https://git.heroku.com/panelsm.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/panelsm.git'
+
+C:\Users\Artur\PycharmProjects\djangosmb>heroku config:set DISABLE_COLLECTSTATIC=1
+Setting DISABLE_COLLECTSTATIC and restarting ⬢ panelsm... done, v3
+DISABLE_COLLECTSTATIC: 1
+
+C:\Users\Artur\PycharmProjects\djangosmb>git push heroku main
+Enumerating objects: 619, done.
+Counting objects: 100% (619/619), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (189/189), done.
+Writing objects: 100% (619/619), 888.91 KiB | 14.57 MiB/s, done.
+Total 619 (delta 412), reused 594 (delta 401), pack-reused 0
+remote: Resolving deltas: 100% (412/412), done.
+remote: Updated 148 paths from 15f8634
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Building on the Heroku-22 stack
+remote: -----> Determining which buildpack to use for this app
+remote: -----> Python app detected
+remote: -----> No Python version was specified. Using the buildpack default: python-3.11.6
+remote:        To use a different version, see: https://devcenter.heroku.com/articles/python-runtimes
+remote: -----> Installing python-3.11.6
+remote: -----> Installing pip 23.3.1, setuptools 68.0.0 and wheel 0.41.3
+remote: -----> Installing SQLite3
+remote: -----> Installing requirements with pip
+remote:        Collecting asgiref==3.7.2 (from -r requirements.txt (line 1))
+remote:          Downloading asgiref-3.7.2-py3-none-any.whl.metadata (9.2 kB)
+remote:        Collecting certifi==2023.11.17 (from -r requirements.txt (line 2))
+remote:          Downloading certifi-2023.11.17-py3-none-any.whl.metadata (2.2 kB)
+remote:        Collecting charset-normalizer==3.3.2 (from -r requirements.txt (line 3))
+remote:          Downloading charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (33 kB)
+remote:        Collecting cloudinary==1.36.0 (from -r requirements.txt (line 4))
+remote:          Downloading cloudinary-1.36.0.tar.gz (174 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting crispy-bootstrap4==2023.1 (from -r requirements.txt (line 5))
+remote:          Downloading crispy_bootstrap4-2023.1-py3-none-any.whl.metadata (2.3 kB)
+remote:        Collecting dj-database-url==2.1.0 (from -r requirements.txt (line 6))
+remote:          Downloading dj_database_url-2.1.0-py3-none-any.whl.metadata (11 kB)
+remote:        Collecting Django==4.2.7 (from -r requirements.txt (line 7))
+remote:          Downloading Django-4.2.7-py3-none-any.whl.metadata (4.1 kB)
+remote:        Collecting django-auto-logout==0.5.1 (from -r requirements.txt (line 8))
+remote:          Downloading django_auto_logout-0.5.1-py3-none-any.whl (6.4 kB)
+remote:        Collecting django-ckeditor-5==0.2.10 (from -r requirements.txt (line 9))
+remote:          Downloading django_ckeditor_5-0.2.10-py3-none-any.whl.metadata (10 kB)
+remote:        Collecting django-crispy-forms==2.1 (from -r requirements.txt (line 10))
+remote:          Downloading django_crispy_forms-2.1-py3-none-any.whl.metadata (5.0 kB)
+remote:        Collecting django-heroku==0.3.1 (from -r requirements.txt (line 11))
+remote:          Downloading django_heroku-0.3.1-py2.py3-none-any.whl (6.2 kB)
+remote:        Collecting django-js-asset==2.1.0 (from -r requirements.txt (line 12))
+remote:          Downloading django_js_asset-2.1.0-py3-none-any.whl.metadata (3.4 kB)
+remote:        Collecting gunicorn==21.2.0 (from -r requirements.txt (line 13))
+remote:          Downloading gunicorn-21.2.0-py3-none-any.whl.metadata (4.1 kB)
+remote:        Collecting idna==3.4 (from -r requirements.txt (line 14))
+remote:          Downloading idna-3.4-py3-none-any.whl (61 kB)
+remote:        Collecting packaging==23.2 (from -r requirements.txt (line 15))
+remote:          Downloading packaging-23.2-py3-none-any.whl.metadata (3.2 kB)
+remote:        Collecting page==0.2 (from -r requirements.txt (line 16))
+remote:          Downloading page-0.2.tar.gz (25 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting pep8==1.7.1 (from -r requirements.txt (line 17))
+remote:          Downloading pep8-1.7.1-py2.py3-none-any.whl (41 kB)
+remote:        Collecting Pillow==10.1.0 (from -r requirements.txt (line 18))
+remote:          Downloading Pillow-10.1.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (9.5 kB)
+remote:        Collecting psycopg2==2.9.9 (from -r requirements.txt (line 19))
+remote:          Downloading psycopg2-2.9.9.tar.gz (384 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting reportlab==4.0.7 (from -r requirements.txt (line 20))
+remote:          Downloading reportlab-4.0.7-py3-none-any.whl.metadata (1.3 kB)
+remote:        Collecting requests==2.31.0 (from -r requirements.txt (line 21))
+remote:          Downloading requests-2.31.0-py3-none-any.whl.metadata (4.6 kB)
+remote:        Collecting six==1.16.0 (from -r requirements.txt (line 22))
+remote:          Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+remote:        Collecting smsapi-client==2.9.2 (from -r requirements.txt (line 23))
+remote:          Downloading smsapi_client-2.9.2-py2.py3-none-any.whl.metadata (2.5 kB)
+remote:        Collecting sqlparse==0.4.4 (from -r requirements.txt (line 24))
+remote:          Downloading sqlparse-0.4.4-py3-none-any.whl (41 kB)
+remote:        Collecting typing_extensions==4.8.0 (from -r requirements.txt (line 25))
+remote:          Downloading typing_extensions-4.8.0-py3-none-any.whl.metadata (3.0 kB)
+remote:        Collecting tzdata==2023.3 (from -r requirements.txt (line 26))
+remote:          Downloading tzdata-2023.3-py2.py3-none-any.whl (341 kB)
+remote:        Collecting urllib3==2.1.0 (from -r requirements.txt (line 27))
+remote:          Downloading urllib3-2.1.0-py3-none-any.whl.metadata (6.4 kB)
+remote:        Collecting whitenoise==6.6.0 (from -r requirements.txt (line 28))
+remote:          Downloading whitenoise-6.6.0-py3-none-any.whl.metadata (3.7 kB)
+remote:        Downloading asgiref-3.7.2-py3-none-any.whl (24 kB)
+remote:        Downloading certifi-2023.11.17-py3-none-any.whl (162 kB)
+remote:        Downloading charset_normalizer-3.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (140 kB)
+remote:        Downloading crispy_bootstrap4-2023.1-py3-none-any.whl (22 kB)
+remote:        Downloading dj_database_url-2.1.0-py3-none-any.whl (7.7 kB)
+remote:        Downloading Django-4.2.7-py3-none-any.whl (8.0 MB)
+remote:        Downloading django_ckeditor_5-0.2.10-py3-none-any.whl (2.0 MB)
+remote:        Downloading django_crispy_forms-2.1-py3-none-any.whl (31 kB)
+remote:        Downloading django_js_asset-2.1.0-py3-none-any.whl (4.7 kB)
+remote:        Downloading gunicorn-21.2.0-py3-none-any.whl (80 kB)
+remote:        Downloading packaging-23.2-py3-none-any.whl (53 kB)
+remote:        Downloading Pillow-10.1.0-cp311-cp311-manylinux_2_28_x86_64.whl (3.6 MB)
+remote:        Downloading reportlab-4.0.7-py3-none-any.whl (1.9 MB)
+remote:        Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+remote:        Downloading smsapi_client-2.9.2-py2.py3-none-any.whl (21 kB)
+remote:        Downloading typing_extensions-4.8.0-py3-none-any.whl (31 kB)
+remote:        Downloading urllib3-2.1.0-py3-none-any.whl (104 kB)
+remote:        Downloading whitenoise-6.6.0-py3-none-any.whl (19 kB)
+remote:        Building wheels for collected packages: cloudinary, page, psycopg2
+remote:          Building wheel for cloudinary (setup.py): started
+remote:          Building wheel for cloudinary (setup.py): finished with status 'done'
+remote:          Created wheel for cloudinary: filename=cloudinary-1.36.0-py3-none-any.whl size=138826 sha256=9f45ac104cbeb74914def200b9eb927d26503c14e5bf14827aa00a42f70c1e80
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-1hckiy63/wheels/c3/93/e6/4337704771b9890f4b4f1d27a3bbfd49684223769b40e70993
+remote:          Building wheel for page (setup.py): started
+remote:          Building wheel for page (setup.py): finished with status 'done'
+remote:          Created wheel for page: filename=page-0.2-py3-none-any.whl size=31115 sha256=53031a9db97807ae6fbc53a59c064b88880be5414552685622a9d0d735579b56
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-1hckiy63/wheels/06/28/9e/d80e74481cbf0971dfd472e3d159a072e1da64cf03c18bc5de
+remote:          Building wheel for psycopg2 (setup.py): started
+remote:          Building wheel for psycopg2 (setup.py): finished with status 'done'
+remote:          Created wheel for psycopg2: filename=psycopg2-2.9.9-cp311-cp311-linux_x86_64.whl size=159957 sha256=cfab8a021dce2c5bba2457a861779adb8168c1e16f932a206982d711c5d93026
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-1hckiy63/wheels/ab/34/b9/78ebef1b3220b4840ee482461e738566c3c9165d2b5c914f51
+remote:        Successfully built cloudinary page psycopg2
+remote:        Installing collected packages: pep8, page, django-auto-logout, whitenoise, urllib3, tzdata, typing_extensions, sqlparse, six, psycopg2, Pillow, packaging, idna, charset-normalizer, certifi, asgiref, requests, reportlab, gunicorn, Django, cloudinary, smsapi-client, django-js-asset, django-crispy-forms, django-ckeditor-5, dj-database-url, django-heroku, crispy-bootstrap4
+remote:        Successfully installed Django-4.2.7 Pillow-10.1.0 asgiref-3.7.2 certifi-2023.11.17 charset-normalizer-3.3.2 cloudinary-1.36.0 crispy-bootstrap4-2023.1 dj-database-url-2.1.0 django-auto-logout-0.5.1 django-ckeditor-5-0.2.10 django-crispy-forms-2.1 django-heroku-0.3.1 django-js-asset-2.1.0 gunicorn-21.2.0 idna-3.4 packaging-23.2 page-0.2 pep8-1.7.1 psycopg2-2.9.9 reportlab-4.0.7 requests-2.31.0 six-1.16.0 smsapi-client-2.9.2 sqlparse-0.4.4 typing_extensions-4.8.0 tzdata-2023.3 urllib3-2.1.0 whitenoise-6.6.0
+remote: -----> Skipping Django collectstatic since the env var DISABLE_COLLECTSTATIC is set.
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 43M
+remote: -----> Launching...
+remote:        Released v4
+remote:        https://panelsm-4554d6dce0e0.herokuapp.com/ deployed to Heroku
+remote:
+remote:  !
+remote:  ! ## Warning - The same version of this code has already been built: 22199151f9786d08915fe687ab9f5e719716d271
+remote:  !
+remote:  ! We have detected that you have triggered a build from source code with version 22199151f9786d08915fe687ab9f5e719716d271
+remote:  ! at least twice. One common cause of this behavior is attempting to deploy code from a different branch.
+remote:  !
+remote:  ! If you are developing on a branch and deploying via git you must run:
+remote:  !
+remote:  !     git push heroku <branchname>:main
+remote:  !
+remote:  ! This article goes into details on the behavior:
+remote:  !   https://devcenter.heroku.com/articles/duplicate-build-version
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/panelsm.git
+ * [new branch]      main -> main
+
+C:\Users\Artur\PycharmProjects\djangosmb>
