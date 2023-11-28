@@ -2,45 +2,25 @@
     <a class="navbar-brand main-heading" href="{% url 'dashboard_telefony' %}">
         &nbsp; Baza telefonów - Menu
     </a>
+    <ul class="navbar-nav ms-center">
+        {% if user.is_authenticated %}
+            <form class="d-flex" role="search" method="POST" action="{% url "search_telefony" %}">
+                {% csrf_token %}
+                <input class="form-control me-2" type="search" placeholder="..." aria-label="Search"
+                       name="searched">
+                <button class="btn btn-outline-success" type="submit">Szukaj</button>
+            </form><br>
+            <a class="btn btn-outline-success" href="{% url 'dashboard' %}">Panel Pracownika - Home &nbsp; <i
+                    class="fa fa-home"
+                    aria-hidden="true"></i>
+            </a><br>
 
-    <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-            &nbsp; &nbsp; &nbsp;
-            {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="btn btn-outline-success" href="{% url 'dashboard' %}">Panel SM - Menu główne&nbsp; <i
-                            class="fa fa-home"
-                            aria-hidden="true"></i> </a>
-                </li>
-                </ul>
-                <ul class="navbar-nav ms-auto">
-                    <form class="d-flex" role="search" method="POST" action="{% url "search_telefony" %}">
-                        {% csrf_token %}
-                        <input class="form-control me-2" type="search" placeholder="..." aria-label="Search"
-                               name="searched">
-                        <button class="btn btn-outline-success" type="submit">Szukaj</button>
-                    </form>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <li class="nav-item">
-                        <a class="btn btn-outline-success" href="{% url 'logout' %}">Wyloguj się &nbsp; <i
-                                class="fa fa-sign-out"
-                                aria-hidden="true"></i>
-                        </a>
-                    </li>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+            <a class="btn btn-outline-success" href="{% url 'logout' %}">Wyloguj się &nbsp; <i
+                    class="fa fa-sign-out"
+                    aria-hidden="true"></i>
+            </a>
+            </ul>
+        {% else %}
 
-                </ul>
-            {% else %}
-
-            {% endif %}
-    </div>
+        {% endif %}
 </nav>

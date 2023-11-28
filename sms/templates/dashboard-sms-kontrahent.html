@@ -1,45 +1,14 @@
 {% extends 'base-sms-kontrahent.html' %}
-
 {% block content %}
-
     <h5> Witaj, {{ user }}! 👋 </h5>
     <hr>
-    {#    <a class="btn btn-outline-primary btn-sm" href="{% url 'create_telefony' %}">Dodaj Kontrahenta &nbsp;#}
-    {#        <i class="fa fa-plus-circle" aria-hidden="true"></i></a>#}
-    &nbsp;&nbsp;&nbsp;Filtr:
+Filtr:
 <a class="btn btn-outline-primary" href="{% url 'dashboard-sms-kontrahent' %}">Kontrahent &nbsp;<i
-            class="fa fa-comment"
+            class="fa fa-filter"
             aria-hidden="true"></i> </a>
-    &nbsp;&nbsp;
-    <a class="btn btn-outline-primary" href="{% url 'dashboard-sms-blok' %}">Blok&nbsp;<i
-            class="fa fa-comment"
-            aria-hidden="true"></i> </a>&nbsp;&nbsp;
-
-{#    #}
-{#    <a class="btn btn-outline-primary" href="{% url 'dashboard-ce-sms' %}">CE - Kontrahent &nbsp;<i#}
-{#            class="fa fa-comment"#}
-{#            aria-hidden="true"></i> </a>#}
-{#    &nbsp;&nbsp;#}
-{#    <a class="btn btn-outline-primary" href="{% url 'dashboard-ce-sms-blok' %}">CE Blok&nbsp;<i#}
-{#            class="fa fa-comment"#}
-{#            aria-hidden="true"></i> </a>&nbsp;&nbsp;#}
-{##}
-{#    <a class="btn btn-outline-primary" href="{% url 'dashboard-nw-sms' %}">NW - Kontrahent &nbsp;<i#}
-{#            class="fa fa-comment"#}
-{#            aria-hidden="true"></i> </a>#}
-{#    &nbsp;&nbsp;#}
-{#       <a class="btn btn-outline-primary" href="{% url 'dashboard-nw-sms-blok' %}">NW Blok&nbsp;<i#}
-{#            class="fa fa-comment"#}
-{#            aria-hidden="true"></i> </a>&nbsp;&nbsp;#}
-{##}
-{#    <a class="btn btn-outline-primary" href="{% url 'dashboard-ns-sms' %}">NS - Kontrahent&nbsp;<i#}
-{#            class="fa fa-comment"#}
-{#            aria-hidden="true"></i> </a>#}
-{##}
-{#    &nbsp;&nbsp;   <a class="btn btn-outline-primary" href="{% url 'dashboard-ns-sms-blok' %}">NS Blok&nbsp;<i#}
-{#            class="fa fa-comment"#}
-{#            aria-hidden="true"></i> </a>&nbsp;&nbsp;#}
-
+<a class="btn btn-outline-primary" href="{% url 'dashboard-sms-blok' %}">Blok&nbsp;<i
+    class="fa fa-filter"
+    aria-hidden="true"></i> </a>&nbsp;&nbsp;
     <hr>
     <br><br>
     <table class="table  table-bordered" id="sample_data">

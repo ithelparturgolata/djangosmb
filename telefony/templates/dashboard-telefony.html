@@ -1,33 +1,17 @@
 {% extends 'base-telefony.html' %}
-
 {% block content %}
-
     <h5> Witaj, {{ user }}! 👋 </h5>
     <hr>
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'create_telefony' %}">Dodaj Kontrahenta &nbsp;
-        <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-    &nbsp;&nbsp;&nbsp;Filtr:
-
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'dashboard-ce' %}">Administracja Centrum &nbsp;<i
-            class="fa fa-file-archive-o"
+    Filtr:
+    <a class="btn btn-outline-primary" href="{% url 'dashboard-ce' %}">Administracja Centrum &nbsp;<i
+            class="fa fa-filter"
             aria-hidden="true"></i> </a>
-    &nbsp;&nbsp;
-
-
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'dashboard-nw' %}">Administracja Na Wyżynach &nbsp;<i
-            class="fa fa-file-archive-o"
+    <a class="btn btn-outline-primary" href="{% url 'dashboard-nw' %}">Administracja Na Wyżynach &nbsp;<i
+            class="fa fa-filter"
             aria-hidden="true"></i> </a>
-    &nbsp;&nbsp;
-
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'dashboard-ns' %}">Administracja Na Skarpie&nbsp;<i
-            class="fa fa-file-o"
+    <a class="btn btn-outline-primary" href="{% url 'dashboard-ns' %}">Administracja Na Skarpie&nbsp;<i
+            class="fa fa-filter"
             aria-hidden="true"></i> </a>
-
-    &nbsp;&nbsp;
-
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'pdf_telefony' %}">Raport &nbsp; <i class="fa fa-file-pdf-o"
-                                                                                               aria-hidden="true"></i>
-    </a>
     <hr>
     <br><br>
     <table class="table  table-bordered" id="sample_data">

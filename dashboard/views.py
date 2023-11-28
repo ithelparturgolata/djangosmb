@@ -72,4 +72,4 @@ def dashboard(request):
 
 def dashboard_main(request):
 
-    return render(request, "rss/dashboard-main.html")
+    return render(request, "rss/../rss/templates/dashboard-main.html")

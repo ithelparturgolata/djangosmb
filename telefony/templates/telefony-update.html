@@ -1,4 +1,4 @@
-{% extends 'rss/base.html' %}
+{% extends 'base-telefony.html' %}
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -18,7 +18,7 @@
             {{ form.zgoda|as_crispy_field }}
             <br>
             {{ my_record }}
-            <a href="{% url 'view_rss' record.id %}" class="btn btn-outline-primary"> Powrót &nbsp;<i
+            <a href="{% url 'view_telefony' record.id %}" class="btn btn-outline-primary"> Powrót &nbsp;<i
                     class="fa fa-arrow-left"
                     aria-hidden="true"></i>
             </a>

@@ -1,22 +1,19 @@
 {% extends 'rss/base.html' %}
-
 {% block content %}
-
     <h5> Witaj, {{ user }}! 👋 </h5>
     <hr>
-<a class="btn btn-outline-primary" href="{% url 'create_rss' %}">Dodaj pozew &nbsp;
+    <a class="btn btn-outline-primary" href="{% url 'create_rss' %}">Dodaj pozew &nbsp;
         <i class="fa fa-plus-circle" aria-hidden="true"></i></a>&nbsp;
     Filtr:&nbsp;
     <a class="btn btn-outline-primary" href="{% url 'dashboard-przeciw' %}">Przeciwko Spółdzielni &nbsp;<i
-            class="fa fa-file-archive-o"
+            class="fa fa-filter"
             aria-hidden="true"></i> </a>&nbsp;
     <a class="btn btn-outline-primary" href="{% url 'dashboard-przez' %}">Przez &nbsp;Spółdzielnię&nbsp;<i
-            class="fa fa-file-o"
+            class="fa fa-filter"
             aria-hidden="true"></i> </a>&nbsp;
     <a class="btn btn-outline-primary" href="{% url 'pdf_rss' %}">Raport &nbsp; <i class="fa fa-file-pdf-o"
                                                                                       aria-hidden="true"></i>
     </a>
-    <hr>
     <hr>
     <br><br>
     <table class="table  table-bordered" id="sample_data">
@@ -33,7 +30,7 @@
         <tbody>
 
         {% for record in records %}
-            {% if record.kto == "Pozew przez Spółdzielnię" %}
+            {% if record.kto == "Pozew przeciwko Spółdzielni" %}
                 <tr>
                     <td> {{ record.id }} </td>
                     <td> {{ record.powod }}</td>

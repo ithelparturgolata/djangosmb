@@ -71,7 +71,7 @@ def dashboard_main(request):
     page = request.GET.get("page")
     my_record = p.get_page(page)
 
-    return render(request, "rss/dashboard-main.html",
+    return render(request, "dashboard-main.html",
                   {"records": my_records, "my_record": my_record})
 
 # dashboard view
@@ -93,7 +93,7 @@ def dashboard_przeciw(request):
     page = request.GET.get("page")
     my_record = p.get_page(page)
 
-    return render(request, "rss/dashboard-przeciw.html",
+    return render(request, "dashboard-przeciw.html",
                   {"records": my_records, "my_record": my_record})
 
 
@@ -104,7 +104,7 @@ def dashboard_przez(request):
     page = request.GET.get("page")
     my_record = p.get_page(page)
 
-    return render(request, "rss/dashboard-przez.html",
+    return render(request, "dashboard-przez.html",
                   {"records": my_records, "my_record": my_record})
 
 
@@ -120,7 +120,7 @@ def create_record(request):
             messages.success(request, "Dodano pozew")
             return redirect("dashboard_main")
     context = {"form": form}
-    return render(request, "rss/create-record.html", context=context)
+    return render(request, "create-record.html", context=context)
 
 
 # update pozew
@@ -139,7 +139,7 @@ def update_record(request, pk):
             return redirect("dashboard_main")
 
     # context = {"form": form}
-    return render(request, "rss/update-record.html", {"form": form, "record": record, "all_records": all_records})
+    return render(request, "update-record.html", {"form": form, "record": record, "all_records": all_records})
 
 
 # view pozew
@@ -148,7 +148,7 @@ def view_record(request,  pk):
     all_records = Record.objects.get(id=pk)
     context = {"record": all_records}
 
-    return render(request, "rss/view-record.html", context=context)
+    return render(request, "view-record.html", context=context)
 
 
 # delete pozew
@@ -192,11 +192,11 @@ def sms_record(request,  pk):
             page = request.GET.get("page")
             my_record = p.get_page(page)
 
-            return render(request, "rss/dashboard-main.html",
+            return render(request, "dashboard-main.html",
                           {"form": form, "record": record, "my_record": my_record})
 
     context = {"form": form, "record": record, "my_record": my_record}
-    return render(request, "rss/sms-record.html", context=context)
+    return render(request, "sms-record.html", context=context)
 
 
 # pdf pozew
@@ -239,10 +239,10 @@ def search(request):
         searched = request.POST["searched"]
         my_records = Record.objects.filter(powod__contains=searched)
 
-        return render(request, "rss/dashboard-search.html",
+        return render(request, "dashboard-search.html",
                       {"searched": searched, "my_records": my_records})
     else:
-        return render(request, "rss/dashboard-search.html", {})
+        return render(request, "dashboard-search.html", {})
 
 
 # view pozew pliki
@@ -251,7 +251,7 @@ def view_file(request, pk):
     my_record = Record.objects.get(id=pk)
     context = {"record": my_record}
 
-    return render(request, "rss/view-file.html", context=context)
+    return render(request, "view-file.html", context=context)
 
 
 # upload pozew pliki
@@ -270,4 +270,4 @@ def upload_file(request, pk):
     else:
         form = UploadFileForm()
     context = {"form": form, "record": record, "my_record": my_record}
-    return render(request, 'rss/upload-file.html', context=context)
+    return render(request, 'upload-file.html', context=context)
