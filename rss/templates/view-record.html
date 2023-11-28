@@ -1,4 +1,4 @@
-{% extends 'rss/base.html' %}
+{% extends 'base-rss.html' %}
 {% block content %}
     <div class="card">
         <div class="card-body">
@@ -36,6 +36,7 @@
     &nbsp;
     <a href="{% url 'sms_rss' record.id %}" class="btn btn-outline-primary"> SMS &nbsp;<i class="fa fa-comment"
                                                                                           aria-hidden="true"></i> </a>
+    &nbsp;
     {{ my_record }}
     <a href="{% url 'view_file' record.id %}" class="btn btn-outline-primary"> Dokumenty &nbsp;<i class="fa fa-file"
                                                                                                   aria-hidden="true"></i>

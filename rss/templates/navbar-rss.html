@@ -3,6 +3,7 @@
         &nbsp; Rejestr Spraw Sądowcyh - Menu
     </a>
     <ul class="navbar-nav ms-center">
+
         {% if user.is_authenticated %}
             <form class="d-flex" role="search" method="POST" action="{% url "search_rss" %}">
                 {% csrf_token %}

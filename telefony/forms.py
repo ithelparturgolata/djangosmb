@@ -37,6 +37,7 @@ class UpdateRecordFormTelefony(forms.ModelForm):
     class Meta:
         model = Mieszkaniec
         fields = ["nazwa", "klatka", "telefon", "zgoda"]
+        exclude = ["data_utworzenia"]
 
 
 class SmsRecordFormTelefony(forms.ModelForm):

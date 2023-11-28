@@ -1,7 +1,9 @@
 {% extends 'base-sms.html' %}
 {% block content %}
+<div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
     <div class="card">
-        <div class="card-body">
+      <div class="card-body">
             <i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;
             <strong>
                 Kontrahent:&nbsp;&nbsp;&nbsp;{{ record.nazwa|upper }}
@@ -17,26 +19,99 @@
             <p><strong> Zgoda: </strong> {{ record.zgoda }} </p>
             <p><strong> Administracja: </strong> {{ record.administracja }} </p>
             <p><strong> Data utworzenia: </strong> {{ record.data_utworzenia }} </p>
-
         </div>
     </div>
-    <br>
-    <a href="{% url 'dashboard_sms' %}" class="btn btn-outline-primary"> Powrót &nbsp; <i
-            class="fa fa-arrow-left"></i> </a>
-    &nbsp;
-{#    <a href="{% url 'update_telefony' record.id %}" class="btn btn-outline-primary"> Edytuj &nbsp; <i class="fa fa-plus"#}
-{#                                                                                                      aria-hidden="true"></i>#}
+
+</div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <strong> Wyślij sms </strong>
+        <hr>
+        <br>
+        <form method="POST" autocomplete="off">
+{#            <p><strong> Kontrahent: </strong> {{ record.nazwa }} </p>#}
+{#            <p><strong> Adres: </strong> {{ record.adres }} </p>#}
+{#            <p><strong> Telefon: </strong> {{ record.telefon }} </p>#}
+            {% csrf_token %}
+            <form class="form-layout-add">
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Telefon</label>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder=""
+                           value="{{ record.telefon }}" maxlength="9" autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label">Tresc</label>
+                    <textarea class="form-control" id="content" name="content" maxlength="160" rows="3"></textarea>
+                </div>
+            </form>
+
+            <a href="{% url 'dashboard-sms-kontrahent' %}" class="btn btn-outline-primary"> Powrót &nbsp; <i
+                    class="fa fa-arrow-left"></i> </a>
+
+            <button type="submit" class="btn btn-outline-primary">Wyślij</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </form>
+    </div>
+</div>
+    </div>
+  </div>
+
+
+{#    <br>#}
+{#    <a href="{% url 'dashboard_sms' %}" class="btn btn-outline-primary"> Powrót &nbsp; <i#}
+{#            class="fa fa-arrow-left"></i> </a>#}
+{#    &nbsp;#}
+{#    &nbsp;#}
+{#    <a href="{% url 'sms-sms' record.id %}" class="btn btn-outline-primary"> SMS &nbsp;<i class="fa fa-comment"#}
+{#                                                                                               aria-hidden="true"></i>#}
 {#    </a>#}
-    &nbsp;
-{#    <a href="{% url 'delete_telefony' record.id %}" class="btn btn-outline-primary"> Skasuj &nbsp;<i#}
-{#            class="fa fa-minus-square"#}
-{#            aria-hidden="true"></i> </a>#}
-    &nbsp;
-    <a href="{% url 'sms-sms' record.id %}" class="btn btn-outline-primary"> SMS &nbsp;<i class="fa fa-comment"
-                                                                                               aria-hidden="true"></i>
-    </a>
     {{ my_record }}
-    {#    <a href="{% url 'view_file' record.id %}" class="btn btn-outline-primary"> Dokumenty &nbsp;<i class="fa fa-file"#}
-    {#                                                                                                  aria-hidden="true"></i>#}
-    {#    </a>#}
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#{% extends 'base-sms.html' %}#}
+{#{% block content %}#}
+{#    <div class="card">#}
+{#        <div class="card-body">#}
+{#            <i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;#}
+{#            <strong>#}
+{#                Kontrahent:&nbsp;&nbsp;&nbsp;{{ record.nazwa|upper }}#}
+                {#                {{record.dotyczy}}#}
+{#            </strong>#}
+{#            <hr>#}
+{#            <p><strong> ID: </strong> {{ record.id }} </p>#}
+{#            <p><strong> Indeks: </strong> {{ record.indeks }} </p>#}
+{#            <p><strong> Nazwa: </strong> {{ record.nazwa }} </p>#}
+{#            <p><strong> Adres: </strong> {{ record.adres }} </p>#}
+{#            <p><strong> Klatka: </strong> {{ record.klatka }} </p>#}
+{#            <p><strong> Telefon: </strong> {{ record.telefon }} </p>#}
+{#            <p><strong> Zgoda: </strong> {{ record.zgoda }} </p>#}
+{#            <p><strong> Administracja: </strong> {{ record.administracja }} </p>#}
+{#            <p><strong> Data utworzenia: </strong> {{ record.data_utworzenia }} </p>#}
+{##}
+{#        </div>#}
+{##}
+{#    </div>#}
+{#    <br>#}
+{#    <a href="{% url 'dashboard_sms' %}" class="btn btn-outline-primary"> Powrót &nbsp; <i#}
+{#            class="fa fa-arrow-left"></i> </a>#}
+{#    &nbsp;#}
+{#    &nbsp;#}
+{#    <a href="{% url 'sms-sms' record.id %}" class="btn btn-outline-primary"> SMS &nbsp;<i class="fa fa-comment"#}
+{#                                                                                               aria-hidden="true"></i>#}
+{#    </a>#}
+{#    {{ my_record }}#}
+{#{% endblock %}#}
