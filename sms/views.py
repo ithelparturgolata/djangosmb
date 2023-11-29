@@ -125,6 +125,13 @@ def view_record_sms(request, pk):
     return render(request, "sms-view.html", context=context)
 
 
+@login_required(login_url="login")
+def view_record_sms_blok(request, pk):
+    all_records = Mieszkaniec.objects.get(id=pk)
+    my_records = Mieszkaniec.objects.all().filter(symbol_budynku__contains="2101").filter(zgoda__contains="tak")
+
+    context = {"all_records": all_records, "my_records": my_records}
+    print(context)
 
 # sms pozew
 @login_required(login_url="login")

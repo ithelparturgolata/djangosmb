@@ -28,12 +28,10 @@ Filtr:
                 <td> {{ record.symbol_budynku }} </td>
                 <td> {{ record.adres_budynku }} </td>
                 <td> {{ record.administracja }} </td>
-                <td><a class="btn btn-outline-primary btn-sm" href="{% url 'view_telefony' record.id %}">
+                <td><a class="btn btn-outline-primary btn-sm" href="{% url 'sms-view-blok' record.id %}">
                     <i class="fa fa-eye" aria-hidden="true"></i> </a></td>
             </tr>
-
         {% endfor %}
-
         </tbody>
     </table>
     <br><br>
