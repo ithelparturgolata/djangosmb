@@ -1,0 +1,19 @@
+
+Numery = 601521657
+Tresc = 1
+Data: 2023-11-30
+golataa
+Godzina: 10:53:06
+-----------
+Numery = 601521657
+Tresc = to jest drugi sms do Golata
+Data: 2023-11-30
+Wys³a³ = golataa
+Godzina: 12:52:40
+-----------
+Numery = 601521657
+Tresc = trzeci smsm
+Data: 2023-11-30
+Wyslal = golataa
+Godzina: 12:54:11
+-----------
