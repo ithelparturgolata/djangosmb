@@ -1,6 +1,6 @@
 {% extends 'base-rss.html' %}
 {% block content %}
-    <h5> Witaj, {{ user }}! 👋 </h5>
+    <h5> Witaj, {{ user.last_name }}! 👋 </h5>
     <hr>
     <a class="btn btn-outline-primary" href="{% url 'create_rss' %}">Dodaj pozew &nbsp;
         <i class="fa fa-plus-circle" aria-hidden="true"></i></a>&nbsp;
@@ -12,6 +12,9 @@
             class="fa fa-filter"
             aria-hidden="true"></i> </a>&nbsp;
     <a class="btn btn-outline-primary" href="{% url 'pdf_rss' %}">Raport &nbsp; <i class="fa fa-file-pdf-o"
+                                                                                      aria-hidden="true"></i>
+    </a>&nbsp;
+        <a class="btn btn-outline-primary" href="{% url 'sms_historia' %}">Raport SMS&nbsp; <i class="fa fa-file-pdf-o"
                                                                                       aria-hidden="true"></i>
     </a>
     <hr>

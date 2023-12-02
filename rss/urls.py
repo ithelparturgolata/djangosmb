@@ -20,6 +20,7 @@ urlpatterns = [
     path("delete/<int:pk>", views.delete, name="delete_rss"),
     path("sms/<int:pk>", views.sms_record, name="sms_rss"),
     path("pdf", views.pdf, name="pdf_rss"),
+    path("sms", views.sms_historia, name="sms_historia"),
     path("search", views.search, name="search_rss"),
     path("view_file/<int:pk>", views.view_file, name="view_file"),
     path("upload_file/<int:pk>", views.upload_file, name="upload_file"),

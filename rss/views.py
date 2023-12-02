@@ -16,6 +16,7 @@ from reportlab.lib.pagesizes import letter
 from django.contrib import messages
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from datetime import date, datetime
 
 
 # homepage view
@@ -167,8 +168,6 @@ def sms_record(request,  pk):
     form = SmsRecordForm(instance=record)
     my_record = Record.objects.get(id=pk)
 
-
-
     if request.method == "POST":
         phone = request.POST.get("phone")
         content = request.POST.get("content")
@@ -191,6 +190,16 @@ def sms_record(request,  pk):
             p = Paginator(Record.objects.all(), 10)
             page = request.GET.get("page")
             my_record = p.get_page(page)
+
+            now = datetime.now()
+            today = str(date.today())
+            hour = now.strftime("%H:%M:%S")
+            user = auth.get_user(request)
+            file = open("save/sms/sms_rss.txt", "a+")
+            file.write("Odbiorca = " + phone + "\n" + "Tresc = " + content + "\n" + "Data: " + today + "\n"
+                       + "Wyslal = " + str(user) + "\n" + "Godzina: " + hour + "\n" + "-----------" + "\n")
+            file.close
+
 
             return render(request, "dashboard-main.html",
                           {"form": form, "record": record, "my_record": my_record})
@@ -230,6 +239,31 @@ def pdf(request):
     buf.seek(0)
 
     return FileResponse(buf, as_attachment=True, filename="raport.pdf")
+
+
+@login_required(login_url="login")
+def sms_historia(request):
+    buf = io.BytesIO()
+    c = canvas.Canvas(buf, pagesize=letter, bottomup=0)
+    textob = c.beginText()
+    textob.setTextOrigin(inch, inch)
+    textob.setFont("Helvetica", 14)
+    records = open('save/sms/sms_rss.txt', 'r')
+    lines = []
+
+    for record in records:
+        lines.append(record)
+
+
+    for line in lines:
+        textob.textLine(line)
+
+    c.drawText(textob)
+    c.showPage()
+    c.save()
+    buf.seek(0)
+
+    return FileResponse(buf, as_attachment=True, filename="raport_sms.pdf")
 
 
 # search pozew
