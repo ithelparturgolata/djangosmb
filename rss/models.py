@@ -6,7 +6,7 @@ class Record(models.Model):
     data_utworzenia = models.DateTimeField(auto_now_add=True)
     powod = models.CharField(max_length=500, blank=False)
     dotyczy = models.CharField(max_length=1000, blank=False)
-    data_pozew = models.DateField(blank=True)
+    data_pozew = models.DateField(blank=True, null=True)
     wyrok1 = models.TextField(max_length=1000, blank=True)
     wyrok2 = models.TextField(max_length=1000, blank=True)
     egzekucja = models.TextField(max_length=1000, blank=True)
@@ -14,9 +14,11 @@ class Record(models.Model):
     zakonczenie = models.TextField(max_length=1000, blank=True)
     zakonczono = "Zakonczono"
     w_trakcie = "W trakcie realizacji"
+    zawieszone = "Zawieszone"
     status_wybor = [
         (zakonczono, "Zakonczono"),
-        (w_trakcie, "W trakcie realizacji")
+        (w_trakcie, "W trakcie realizacji"),
+        (zawieszone, "Zawieszone")
     ]
     status = models.CharField(
         max_length=22,

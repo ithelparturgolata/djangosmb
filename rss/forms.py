@@ -20,7 +20,7 @@ class LoginForm(AuthenticationForm):
 
 class AddRecordForm(forms.ModelForm):
     powod = forms.CharField(widget=forms.Textarea,
-                            label="Powód", max_length=1000)
+                            label="Powód/Pozwany", max_length=1000)
     dotyczy = forms.CharField(widget=forms.Textarea,
                               label="Dotyczy", max_length=1000)
     data_pozew = forms.DateField(
@@ -31,20 +31,20 @@ class AddRecordForm(forms.ModelForm):
     wyrok2 = forms.CharField(widget=forms.Textarea,
                              label="Wyrok drugiej instancji",
                              max_length=1000, required=False)
-    zakonczenie = forms.CharField(widget=forms.Textarea,
-                                  label="Zakończenie",
-                                  max_length=1000, required=False)
+    # zakonczenie = forms.CharField(widget=forms.Textarea,
+    #                               label="Zakończenie",
+    #                               max_length=1000, required=False)
 
     class Meta:
         model = Record
-        fields = ["powod", "dotyczy", "data_pozew", "wyrok1",
-                  "wyrok2", "egzekucja", "uwagi", "zakonczenie",
-                  "status", "kto"]
-
+        fields = ["powod", "dotyczy", "wyrok1",
+                  "wyrok2", "egzekucja", "uwagi",
+                  "status", "kto", "data_pozew"]
+        exclude = ["zakonczenie"]
 
 class UpdateRecordForm(forms.ModelForm):
     powod = forms.CharField(widget=forms.Textarea,
-                            label="Powód", max_length=1000)
+                            label="Powód/Pozwany", max_length=1000)
     dotyczy = forms.CharField(widget=forms.Textarea,
                               label="Dotyczy", max_length=1000)
     data_pozew = forms.DateField(
@@ -56,19 +56,19 @@ class UpdateRecordForm(forms.ModelForm):
     wyrok2 = forms.CharField(widget=forms.Textarea,
                              label="Wyrok drugiej instancji",
                              max_length=1000, required=False)
-    zakonczenie = forms.CharField(widget=forms.Textarea,
-                                  label="Zakończenie",
-                                  max_length=1000, required=False)
+    # zakonczenie = forms.CharField(widget=forms.Textarea,
+    #                               label="Zakończenie",
+    #                               max_length=1000, required=False)
+
 
     class Meta:
         model = Record
-        fields = ["powod", "dotyczy", "data_pozew", "wyrok1",
-                  "wyrok2", "egzekucja", "uwagi", "zakonczenie",
+        fields = ["powod", "dotyczy", "wyrok1",
+                  "wyrok2", "egzekucja", "uwagi",
                   "status", "kto"]
-
+        exclude = ["content", "phone", "zakonczenie"]
 
 class SmsRecordForm(forms.ModelForm):
-
     class Meta:
         model = Record
         fields = ["powod", "dotyczy", "phone", "content"]
