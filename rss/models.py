@@ -6,7 +6,7 @@ class Record(models.Model):
     data_utworzenia = models.DateTimeField(auto_now_add=True)
     powod = models.CharField(max_length=500, blank=False)
     dotyczy = models.CharField(max_length=1000, blank=False)
-    data_pozew = models.DateField(blank=True, null=True)
+    data_pozew = models.CharField(blank=True, null=True, max_length=20)
     wyrok1 = models.TextField(max_length=1000, blank=True)
     wyrok2 = models.TextField(max_length=1000, blank=True)
     egzekucja = models.TextField(max_length=1000, blank=True)
