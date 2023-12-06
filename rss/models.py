@@ -62,5 +62,3 @@ class Record(models.Model):
 
     def __str__(self):
         return self.powod + "   " + self.dotyczy
-
-

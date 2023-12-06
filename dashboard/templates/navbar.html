@@ -2,14 +2,14 @@
     <a class="navbar-brand main-heading" href="{% url 'dashboard' %}">
         &nbsp; Panel Rejestr Spraw Sądowych
     </a>
-        <ul class="navbar-nav ms-auto">
-            {% if user.is_authenticated %}
-                <a class="btn btn-outline-success" href="{% url 'logout' %}">Wyloguj się &nbsp; <i
-                        class="fa fa-sign-out"
-                        aria-hidden="true"></i>
-                </a>
-        </ul>
-            {% else %}
+    <ul class="navbar-nav ms-auto">
+        {% if user.is_authenticated %}
+            <a class="btn btn-outline-success" href="{% url 'logout' %}">Wyloguj się &nbsp; <i
+                    class="fa fa-sign-out"
+                    aria-hidden="true"></i>
+            </a>
+            </ul>
+        {% else %}
 
-            {% endif %}
+        {% endif %}
 </nav>

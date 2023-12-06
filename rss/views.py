@@ -19,52 +19,6 @@ from django.core.files.storage import FileSystemStorage
 from datetime import date, datetime
 
 
-# homepage view
-# def home(request):
-#     return render(request, ("rss/index.html"))
-
-
-# register view
-# def register(request):
-#     form = CreateUserForm()
-#
-#     if request.method == "POST":
-#         form = CreateUserForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#
-#     context = {"form": form}
-#     return render(request, "rss/register.html", context=context)
-
-
-# login view
-# def login_view(request):
-#     form = LoginForm()
-#
-#     if request.method == "POST":
-#         form = LoginForm(request, data=request.POST)
-#         if form.is_valid():
-#             username = request.POST.get("username")
-#             password = request.POST.get("password")
-#
-#             user = authenticate(request, username=username, password=password)
-#             if user is not None:
-#                 auth.login(request, user)
-#                 messages.success(request, "Zalogowano")
-#
-#                 return redirect("dashboard")
-#
-#     context = {"form": form}
-#     return render(request, "rss/login.html", context=context)
-
-
-# logout view
-# def logout_view(request):
-#     auth.logout(request)
-#     messages.success(request, "Wylogowano")
-#     return redirect("login")
-
-
 @login_required(login_url="login")
 def dashboard_main(request):
     my_records = Record.objects.all()
@@ -74,17 +28,6 @@ def dashboard_main(request):
 
     return render(request, "dashboard-main.html",
                   {"records": my_records, "my_record": my_record})
-
-# dashboard view
-# @login_required(login_url="login")
-# def dashboard(request):
-#     my_records = Record.objects.all()
-#     p = Paginator(Record.objects.all(), 10)
-#     page = request.GET.get("page")
-#     my_record = p.get_page(page)
-#
-#     return render(request, "rss/dashboard-main.html",
-#                   {"records": my_records, "my_record": my_record})
 
 
 @login_required(login_url="login")
@@ -140,7 +83,8 @@ def update_record(request, pk):
             return redirect("dashboard_main")
 
     # context = {"form": form}
-    return render(request, "update-record.html", {"form": form, "record": record, "all_records": all_records})
+    return render(request, "update-record.html",
+                  {"form": form, "record": record, "all_records": all_records})
 
 
 # view pozew
@@ -196,13 +140,17 @@ def sms_record(request,  pk):
             hour = now.strftime("%H:%M:%S")
             user = auth.get_user(request)
             file = open("save/sms/sms_rss.txt", "a+")
-            file.write("Odbiorca = " + phone + "\n" + "Tresc = " + content + "\n" + "Data: " + today + "\n"
-                       + "Wyslal = " + str(user) + "\n" + "Godzina: " + hour + "\n" + "-----------" + "\n")
+            file.write("Odbiorca = " + phone + "\n" +
+                       "Tresc = " + content + "\n" +
+                       "Data:" + today + "\n" +
+                       "Wyslal = " + str(user) +
+                       "\n" + "Godzina: " + hour + "\n" + "-----------" + "\n")
             file.close
 
-
-            return render(request, "dashboard-main.html",
-                          {"form": form, "record": record, "my_record": my_record})
+            return render(request,
+                          "dashboard-main.html",
+                          {"form": form,
+                           "record": record, "my_record": my_record})
 
     context = {"form": form, "record": record, "my_record": my_record}
     return render(request, "sms-record.html", context=context)
@@ -253,7 +201,6 @@ def sms_historia(request):
 
     for record in records:
         lines.append(record)
-
 
     for line in lines:
         textob.textLine(line)
