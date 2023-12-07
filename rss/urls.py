@@ -24,6 +24,7 @@ urlpatterns = [
     path("search", views.search, name="search_rss"),
     path("view_file/<int:pk>", views.view_file, name="view_file"),
     path("upload_file/<int:pk>", views.upload_file, name="upload_file"),
+    # path('download/<int:file_id>/', views.download_file, name='download_file'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

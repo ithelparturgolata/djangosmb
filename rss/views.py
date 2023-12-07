@@ -1,10 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from .forms import CreateUserForm, LoginForm, \
     AddRecordForm, UpdateRecordForm, SmsRecordForm, UploadFileForm
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+
+from .functions import handle_uploaded_file
 from .models import Record
 from smsapi.client import SmsApiPlClient
 from django.core.paginator import Paginator
@@ -17,7 +19,7 @@ from django.contrib import messages
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from datetime import date, datetime
-
+from .forms import UploadFileForm
 
 @login_required(login_url="login")
 def dashboard_main(request):
